@@ -2,7 +2,7 @@
 layout:     post
 title:      First article
 date:       2015-09-12 19:36
-summary:    Pixyll is a simple, beautiful theme for Jekyll that emphasizes content rather than aesthetic fluff.
+summary:    just for test
 categories: jekyll pixyll
 ---
 {% highlight c %}
