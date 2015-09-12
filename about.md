@@ -5,8 +5,8 @@ permalink: /about/
 no_duoshuo: true
 ---
 
-*伪ACMer
-*C/C++ && Vim党
+* 伪ACMer
+* C/C++ && Vim党
 
 
 
