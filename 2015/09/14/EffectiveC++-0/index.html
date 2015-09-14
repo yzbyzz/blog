@@ -30,7 +30,7 @@
 
 
 
-  <meta name="keywords" content="Hexo,next" />
+  <meta name="keywords" content="C++," />
 
 
 
@@ -39,16 +39,52 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1" />
 
 
-<meta name="description" content="用过csdn和博客园，都是三天打渔两天晒网。零星地写了几篇没甚营养的所谓题解。这次花费了一番功夫才搭好的博客，希望能坚持下去。学习、思考、总结、分享、交流。也给自己以后可以闲来翻翻，然后发现自己曾经多么稚嫩。">
+<meta name="description" content="C++编程范型（Programming Paradigms）
+基于过程 Procedural-based
+基于对象 Object-based
+面向对象 Object-oriented
+泛型技术 GenericsC++断想
+
+中英简繁术语对照
+
+object 在Object-oriented中的真正意义是“物体、物件”，而非“对象、目标”
+
+
+0 导读语（Terminology）
+声明式告诉编译器某">
 <meta property="og:type" content="article">
-<meta property="og:title" content="在Github的第一篇文章">
-<meta property="og:url" content="http://yzbyzz.github.io/2015/09/13/first/index.html">
+<meta property="og:title" content="《Effective C++》读书笔记0译序和导读">
+<meta property="og:url" content="http://yzbyzz.github.io/2015/09/14/EffectiveC++-0/index.html">
 <meta property="og:site_name" content="z.Note">
-<meta property="og:description" content="用过csdn和博客园，都是三天打渔两天晒网。零星地写了几篇没甚营养的所谓题解。这次花费了一番功夫才搭好的博客，希望能坚持下去。学习、思考、总结、分享、交流。也给自己以后可以闲来翻翻，然后发现自己曾经多么稚嫩。">
-<meta property="og:updated_time" content="2015-09-13T14:15:37.439Z">
+<meta property="og:description" content="C++编程范型（Programming Paradigms）
+基于过程 Procedural-based
+基于对象 Object-based
+面向对象 Object-oriented
+泛型技术 GenericsC++断想
+
+中英简繁术语对照
+
+object 在Object-oriented中的真正意义是“物体、物件”，而非“对象、目标”
+
+
+0 导读语（Terminology）
+声明式告诉编译器某">
+<meta property="og:updated_time" content="2015-09-14T15:25:15.874Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="在Github的第一篇文章">
-<meta name="twitter:description" content="用过csdn和博客园，都是三天打渔两天晒网。零星地写了几篇没甚营养的所谓题解。这次花费了一番功夫才搭好的博客，希望能坚持下去。学习、思考、总结、分享、交流。也给自己以后可以闲来翻翻，然后发现自己曾经多么稚嫩。">
+<meta name="twitter:title" content="《Effective C++》读书笔记0译序和导读">
+<meta name="twitter:description" content="C++编程范型（Programming Paradigms）
+基于过程 Procedural-based
+基于对象 Object-based
+面向对象 Object-oriented
+泛型技术 GenericsC++断想
+
+中英简繁术语对照
+
+object 在Object-oriented中的真正意义是“物体、物件”，而非“对象、目标”
+
+
+0 导读语（Terminology）
+声明式告诉编译器某">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -58,7 +94,7 @@
   };
 </script>
 
-  <title> 在Github的第一篇文章 | z.Note </title>
+  <title> 《Effective C++》读书笔记0译序和导读 | z.Note </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -194,7 +230,7 @@
           
           
             
-              在Github的第一篇文章
+              《Effective C++》读书笔记0译序和导读
             
           
         </h1>
@@ -203,8 +239,8 @@
       <div class="post-meta">
         <span class="post-time">
           发表于
-          <time itemprop="dateCreated" datetime="2015-09-13T22:15:37+08:00" content="2015-09-13">
-            2015-09-13
+          <time itemprop="dateCreated" datetime="2015-09-14T23:20:19+08:00" content="2015-09-14">
+            2015-09-14
           </time>
         </span>
 
@@ -213,8 +249,8 @@
             &nbsp; | &nbsp; 分类于
             
               <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/随想/" itemprop="url" rel="index">
-                  <span itemprop="name">随想</span>
+                <a href="/categories/读书笔记/" itemprop="url" rel="index">
+                  <span itemprop="name">读书笔记</span>
                 </a>
               </span>
 
@@ -229,8 +265,8 @@
           
             <span class="post-comments-count">
               &nbsp; | &nbsp;
-              <a href="/2015/09/13/first/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2015/09/13/first/" itemprop="commentsCount"></span>
+              <a href="/2015/09/14/EffectiveC++-0/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2015/09/14/EffectiveC++-0/" itemprop="commentsCount"></span>
               </a>
             </span>
           
@@ -244,27 +280,93 @@
       
 
       
-        <span itemprop="articleBody"><p>用过csdn和博客园，都是三天打渔两天晒网。零星地写了几篇没甚营养的所谓题解。这次花费了一番功夫才搭好的博客，希望能坚持下去。学习、思考、总结、分享、交流。也给自己以后可以闲来翻翻，然后发现自己曾经多么稚嫩。<br><a id="more"></a></p>
-<p>中学课本有不少古文。也为了考试背了一些。但明显很多中学背的东西还没一些小学时背的记得牢。现在，对中学印象最深的一篇古文是上课没讲过的《谏太宗十思疏》。里面有一句话“有善始者实繁，能克终者盖寡”。当时闲着无聊翻了一遍文章，就只记住了这句话。大概是觉得有点像在说自己？希望这一次不会如此。</p>
-<p>高中老师里最有性格的大概是高二的班主 小明（名字都这么任性）了，教化学。时常做一些让人摸不着头脑的事。像晚自习突然来个默写化学方程式。然后没写对的抄100遍。等大家都写的焦头烂额，又来了句不用抄了。幸好当时我没抄。不过不是因为全对，而是因为默写后没有马上收本子，过了一个课间才收。我翻了书，用其他颜色的笔标记了错的地方，于是幸免于难。</p>
-<p>这其实也不是让我记住小明的最主要原因。有一次上课还是晚自习，已经忘记了。原话也记不清了，大概就是说做事情不要总想着等什么时候或等怎样怎样了再去做。否则你这件事就永远办不成了。当时还举了他自己的例子，也记不清了。但这句话我至今记得。而且时常发现自己处于这种处境中，但也仅仅只是意识到，却没有做什么来摆脱。</p>
-<p>简单来说就是拖延症。嗯，改掉拖延症，从明天开始。</p>
+        <span itemprop="articleBody"><h3 id="C++编程范型（Programming_Paradigms）">C++编程范型（Programming Paradigms）</h3><ul>
+<li>基于过程 Procedural-based</li>
+<li>基于对象 Object-based</li>
+<li>面向对象 Object-oriented</li>
+<li>泛型技术 Generics<br><a href="http://oss.org.cn/ossdocs/gnu/cpp_think.html" target="_blank" rel="external">C++断想</a></li>
+</ul>
+<h3 id="中英简繁术语对照">中英简繁术语对照</h3><blockquote>
+<ul>
+<li>object 在Object-oriented中的真正意义是“物体、物件”，而非“对象、目标”</li>
+</ul>
+</blockquote>
+<h2 id="0_导读">0 导读</h2><h3 id="语（Terminology）">语（Terminology）</h3><ul>
+<li>声明式<br>告诉编译器某个东西的名称和类型，但略去细节。<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">extren <span class="keyword">int</span> x;</span><br><span class="line"><span class="built_in">std</span>::<span class="keyword">size_t</span> numDigits(<span class="keyword">int</span> number);</span><br><span class="line"><span class="keyword">class</span> Widget;</span><br><span class="line"></span><br><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="keyword">class</span> GraphNode;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<blockquote>
+<ul>
+<li>size_t是一个typedef，unsigned类型。</li>
+<li>函数的声明揭示其签名式，也就是参数和返回类型。一个函数的签名等同于该函数的类型。</li>
+<li>C++对签名式的官方定义并不包括函数的返回类型。</li>
+</ul>
+</blockquote>
+<ul>
+<li><p>定义式<br>提供编译器一些声明式所遗漏的细节。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> x;</span><br><span class="line"><span class="built_in">std</span>::<span class="keyword">size_t</span> numDigits(<span class="keyword">int</span> number)&#123;</span><br><span class="line">    <span class="built_in">std</span>::<span class="keyword">size_t</span> digitsSoFar = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span>( (number /= <span class="number">10</span>) != <span class="number">0</span>) ++digitsSoFar;</span><br><span class="line">    <span class="keyword">return</span> digitsSoFar;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">class</span> Widget&#123;</span><br><span class="line"><span class="keyword">public</span> :</span><br><span class="line">    Widget();</span><br><span class="line">    ~Widget();</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="function"><span class="keyword">class</span> <span class="title">GraphNode</span><span class="params">(</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    GraphNode()</span></span>;</span><br><span class="line">    ~GraphNode();</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>初始化<br>“给予对象初值”的过程。</p>
+<blockquote>
+<ul>
+<li>构造函数声明为explicit，阻止构造函数被用来执行隐式类型转换，但仍可被用来执行显示类型转换。</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+<ul>
+<li>copy构造函数<br>以同类型对象初始化自我对象</li>
+</ul>
+<ul>
+<li>copy assignment操作符<br>从另一个同型对象拷贝其值到自我对象</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> Widget;</span><br><span class="line">Widget w1;</span><br><span class="line"><span class="function">Widget <span class="title">w2</span><span class="params">(w1)</span></span>; <span class="comment">//拷贝构造</span></span><br><span class="line">w2 = w1; <span class="comment">//拷贝赋值</span></span><br><span class="line">Widget w3 = w1;<span class="comment">//拷贝构造</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>Pass-by-value<br>调用copy构造函数 </p>
+</li>
+<li><p>STL（标准模板库）<br>许多相关机能以函数对象（function object，“行为像函数”的对象，重载operator( )（function call操作符））实现。</p>
+</li>
+<li><p>不明确行为（undefined behavior）<br>尽可能避免</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> *p = <span class="number">0</span>;</span><br><span class="line"><span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; *p;</span><br><span class="line"></span><br><span class="line"><span class="keyword">char</span> name[] = <span class="string">"abc"</span>;</span><br><span class="line"><span class="keyword">char</span> c = name[<span class="number">5</span>];</span><br><span class="line"></span><br><span class="line">i = i++ + ++i;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li><p>接口<br>C++没有像Java、.Net语言那样的接口<br>一般指函数的签名或class的可访问元素或针对某template类型参数需为有效的一个表达式</p>
+</li>
+<li><p>客户<br>使用你所写代码（通常是一些接口）的人或物。<br>函数的客户：其使用者，程序中调用函数（或取其地址）的那部分，编写并维护那些代码的人。<br>书中常指程序员。</p>
+</li>
+</ul>
+<h3 id="TR1（“Technical_Report_1”）">TR1（“Technical Report 1”）</h3><ul>
+<li>一份规范，描述加入C++标准程序库的诸多新机能</li>
+<li>这些机能以新的class templates和function templates形式体现</li>
+<li>针对的题目有hash table，reference-counting smart pointers，regular expressions，以及更多</li>
+<li>所有TR1组件都被置于命名空间tr1内，后者嵌套于命名空间std内<h3 id="Boost">Boost</h3></li>
+<li>组织，亦是<a href="http://boost.org" target="_blank" rel="external">网站</a>，提供可移植、同僚复审、源码开放的C++程序库。</li>
+<li>大多数TR1机能是以Boost的工作为基础。</li>
+<li>Boost提供比TR1更多的东西<br>.<br>.<br>.<br>.<br>第一次写读书笔记，可能以后形式会有所改变，应该更关注读后的感想，而不是简单的罗列知识点。</li>
+</ul>
 </span>
       
     </div>
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/C/" rel="tag">#C++</a>
+          
+        </div>
+      
 
       
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2015/09/14/EffectiveC++-0/" rel="prev">《Effective C++》读书笔记0译序和导读</a>
-            
           </div>
 
           <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/09/13/first/" rel="next">在Github的第一篇文章</a>
             
           </div>
         </div>
@@ -279,10 +381,10 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2015/09/13/first/"
-     data-title="在Github的第一篇文章"
+        <div class="ds-share flat" data-thread-key="2015/09/14/EffectiveC++-0/"
+     data-title="《Effective C++》读书笔记0译序和导读"
      data-content=""
-     data-url="http://yzbyzz.github.io/2015/09/13/first/">
+     data-url="http://yzbyzz.github.io/2015/09/14/EffectiveC++-0/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -308,8 +410,8 @@
         
           <div class="comments" id="comments">
             
-              <div class="ds-thread" data-thread-key="2015/09/13/first/"
-                   data-title="在Github的第一篇文章" data-url="http://yzbyzz.github.io/2015/09/13/first/">
+              <div class="ds-thread" data-thread-key="2015/09/14/EffectiveC++-0/"
+                   data-title="《Effective C++》读书笔记0译序和导读" data-url="http://yzbyzz.github.io/2015/09/14/EffectiveC++-0/">
               </div>
             
           </div>
@@ -405,7 +507,7 @@
           <div class="post-toc">
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#C++编程范型（Programming_Paradigms）"><span class="nav-number">1.</span> <span class="nav-text">C++编程范型（Programming Paradigms）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#中英简繁术语对照"><span class="nav-number">2.</span> <span class="nav-text">中英简繁术语对照</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0_导读"><span class="nav-number"></span> <span class="nav-text">0 导读</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#语（Terminology）"><span class="nav-number">1.</span> <span class="nav-text">语（Terminology）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TR1（“Technical_Report_1”）"><span class="nav-number">2.</span> <span class="nav-text">TR1（“Technical Report 1”）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Boost"><span class="nav-number">3.</span> <span class="nav-text">Boost</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
