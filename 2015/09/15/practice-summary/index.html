@@ -30,7 +30,7 @@
 
 
 
-  <meta name="keywords" content="C++," />
+  <meta name="keywords" content="C++,Mysql,Ubuntu," />
 
 
 
@@ -39,28 +39,34 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1" />
 
 
-<meta name="description" content="C++编程范型（Programming Paradigms）
-基于过程 Procedural-based
-基于对象 Object-based
-面向对象 Object-oriented
-泛型技术 GenericsC++断想">
+<meta name="description" content="装64位虚拟机的条件
+64位CPU
+64位操作系统
+64位的镜像
+CPU支持硬件虚拟化，且支持的开关打开
+
+前三个都比较明显。第四个通常intel virtual technology（硬件虚拟化）是关闭的。需要开机时进入BIOS修改为启动即可。进入BIOS的方式视具体电脑而定，通常为冷启动后按F2、F10、DEL等之一。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="《Effective C++》读书笔记0译序和导读">
-<meta property="og:url" content="http://yzbyzz.github.io/2015/09/14/EffectiveC++-0/index.html">
+<meta property="og:title" content="Win7下装64位Ubuntu虚拟机 及 Ubuntu下C++连接Mysql 遇到的一些问题">
+<meta property="og:url" content="http://yzbyzz.github.io/2015/09/15/practice-summary/index.html">
 <meta property="og:site_name" content="z.Note">
-<meta property="og:description" content="C++编程范型（Programming Paradigms）
-基于过程 Procedural-based
-基于对象 Object-based
-面向对象 Object-oriented
-泛型技术 GenericsC++断想">
-<meta property="og:updated_time" content="2015-09-14T15:26:25.450Z">
+<meta property="og:description" content="装64位虚拟机的条件
+64位CPU
+64位操作系统
+64位的镜像
+CPU支持硬件虚拟化，且支持的开关打开
+
+前三个都比较明显。第四个通常intel virtual technology（硬件虚拟化）是关闭的。需要开机时进入BIOS修改为启动即可。进入BIOS的方式视具体电脑而定，通常为冷启动后按F2、F10、DEL等之一。">
+<meta property="og:updated_time" content="2015-09-15T15:26:04.290Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="《Effective C++》读书笔记0译序和导读">
-<meta name="twitter:description" content="C++编程范型（Programming Paradigms）
-基于过程 Procedural-based
-基于对象 Object-based
-面向对象 Object-oriented
-泛型技术 GenericsC++断想">
+<meta name="twitter:title" content="Win7下装64位Ubuntu虚拟机 及 Ubuntu下C++连接Mysql 遇到的一些问题">
+<meta name="twitter:description" content="装64位虚拟机的条件
+64位CPU
+64位操作系统
+64位的镜像
+CPU支持硬件虚拟化，且支持的开关打开
+
+前三个都比较明显。第四个通常intel virtual technology（硬件虚拟化）是关闭的。需要开机时进入BIOS修改为启动即可。进入BIOS的方式视具体电脑而定，通常为冷启动后按F2、F10、DEL等之一。">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -70,7 +76,7 @@
   };
 </script>
 
-  <title> 《Effective C++》读书笔记0译序和导读 | z.Note </title>
+  <title> Win7下装64位Ubuntu虚拟机 及 Ubuntu下C++连接Mysql 遇到的一些问题 | z.Note </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -206,7 +212,7 @@
           
           
             
-              《Effective C++》读书笔记0译序和导读
+              Win7下装64位Ubuntu虚拟机 及 Ubuntu下C++连接Mysql 遇到的一些问题
             
           
         </h1>
@@ -215,8 +221,8 @@
       <div class="post-meta">
         <span class="post-time">
           发表于
-          <time itemprop="dateCreated" datetime="2015-09-14T23:20:19+08:00" content="2015-09-14">
-            2015-09-14
+          <time itemprop="dateCreated" datetime="2015-09-15T22:46:47+08:00" content="2015-09-15">
+            2015-09-15
           </time>
         </span>
 
@@ -225,8 +231,8 @@
             &nbsp; | &nbsp; 分类于
             
               <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/读书笔记/" itemprop="url" rel="index">
-                  <span itemprop="name">读书笔记</span>
+                <a href="/categories/小结/" itemprop="url" rel="index">
+                  <span itemprop="name">小结</span>
                 </a>
               </span>
 
@@ -241,8 +247,8 @@
           
             <span class="post-comments-count">
               &nbsp; | &nbsp;
-              <a href="/2015/09/14/EffectiveC++-0/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2015/09/14/EffectiveC++-0/" itemprop="commentsCount"></span>
+              <a href="/2015/09/15/practice-summary/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2015/09/15/practice-summary/" itemprop="commentsCount"></span>
               </a>
             </span>
           
@@ -256,72 +262,32 @@
       
 
       
-        <span itemprop="articleBody"><h3 id="C++编程范型（Programming_Paradigms）">C++编程范型（Programming Paradigms）</h3><ul>
-<li>基于过程 Procedural-based</li>
-<li>基于对象 Object-based</li>
-<li>面向对象 Object-oriented</li>
-<li>泛型技术 Generics<br><a href="http://oss.org.cn/ossdocs/gnu/cpp_think.html" target="_blank" rel="external">C++断想</a></li>
-</ul>
+        <span itemprop="articleBody"><h4 id="装64位虚拟机的条件">装64位虚拟机的条件</h4><ol>
+<li>64位CPU</li>
+<li>64位操作系统</li>
+<li>64位的镜像</li>
+<li>CPU支持硬件虚拟化，且支持的开关打开</li>
+</ol>
+<p>前三个都比较明显。第四个通常intel virtual technology（硬件虚拟化）是关闭的。需要开机时进入BIOS修改为启动即可。进入BIOS的方式视具体电脑而定，通常为冷启动后按F2、F10、DEL等之一。</p>
 <a id="more"></a>
-<h3 id="中英简繁术语对照">中英简繁术语对照</h3><blockquote>
-<ul>
-<li>object 在Object-oriented中的真正意义是“物体、物件”，而非“对象、目标”</li>
-</ul>
-</blockquote>
-<h2 id="0_导读">0 导读</h2><h3 id="语（Terminology）">语（Terminology）</h3><ul>
-<li>声明式<br>告诉编译器某个东西的名称和类型，但略去细节。<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">extren <span class="keyword">int</span> x;</span><br><span class="line"><span class="built_in">std</span>::<span class="keyword">size_t</span> numDigits(<span class="keyword">int</span> number);</span><br><span class="line"><span class="keyword">class</span> Widget;</span><br><span class="line"></span><br><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="keyword">class</span> GraphNode;</span><br></pre></td></tr></table></figure>
+<h3 id="VirtualBox中实现Ubuntu自适应窗口大小">VirtualBox中实现Ubuntu自适应窗口大小</h3><ol>
+<li>开启Ubuntu虚拟机，点击VirtualBox左上菜单栏“设备”-“安装增强功能”</li>
+<li>在Ubuntu中打开文件夹，可看到有光盘VBOXADDITIONS_xxx，点击后进入光盘目录，再点击右上角“Auto run”，执行完命令后重启即可。</li>
+</ol>
+<h3 id="VirtualBox实现Win7_和_Ubuntu共享文件夹">VirtualBox实现Win7 和 Ubuntu共享文件夹</h3><ol>
+<li>在Win7下创建一个目录。如“D:\Share”</li>
+<li>在VirtualBox中选中Ubuntu，右键“设置”-“共享文件夹”,<br>“添加文件夹”，路径选中刚才创建的文件夹，名称可另取。如“WShare”。</li>
+<li><p>在Ubuntu中创建目录。名字任意。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir ~/ushare</span><br></pre></td></tr></table></figure>
 </li>
-</ul>
-<blockquote>
-<ul>
-<li>size_t是一个typedef，unsigned类型。</li>
-<li>函数的声明揭示其签名式，也就是参数和返回类型。一个函数的签名等同于该函数的类型。</li>
-<li>C++对签名式的官方定义并不包括函数的返回类型。</li>
-</ul>
-</blockquote>
-<ul>
-<li><p>定义式<br>提供编译器一些声明式所遗漏的细节。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> x;</span><br><span class="line"><span class="built_in">std</span>::<span class="keyword">size_t</span> numDigits(<span class="keyword">int</span> number)&#123;</span><br><span class="line">    <span class="built_in">std</span>::<span class="keyword">size_t</span> digitsSoFar = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span>( (number /= <span class="number">10</span>) != <span class="number">0</span>) ++digitsSoFar;</span><br><span class="line">    <span class="keyword">return</span> digitsSoFar;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">class</span> Widget&#123;</span><br><span class="line"><span class="keyword">public</span> :</span><br><span class="line">    Widget();</span><br><span class="line">    ~Widget();</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="function"><span class="keyword">class</span> <span class="title">GraphNode</span><span class="params">(</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    GraphNode()</span></span>;</span><br><span class="line">    ~GraphNode();</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<li><p>挂载共享文件夹WShare到ushare处。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo mount -t vboxsf WShare ~/ushare</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>初始化<br>“给予对象初值”的过程。</p>
-<blockquote>
-<ul>
-<li>构造函数声明为explicit，阻止构造函数被用来执行隐式类型转换，但仍可被用来执行显示类型转换。</li>
-</ul>
-</blockquote>
-</li>
-</ul>
-<ul>
-<li>copy构造函数<br>以同类型对象初始化自我对象</li>
-</ul>
-<ul>
-<li>copy assignment操作符<br>从另一个同型对象拷贝其值到自我对象</li>
-</ul>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> Widget;</span><br><span class="line">Widget w1;</span><br><span class="line"><span class="function">Widget <span class="title">w2</span><span class="params">(w1)</span></span>; <span class="comment">//拷贝构造</span></span><br><span class="line">w2 = w1; <span class="comment">//拷贝赋值</span></span><br><span class="line">Widget w3 = w1;<span class="comment">//拷贝构造</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li><p>Pass-by-value<br>调用copy构造函数 </p>
-</li>
-<li><p>STL（标准模板库）<br>许多相关机能以函数对象（function object，“行为像函数”的对象，重载operator( )（function call操作符））实现。</p>
-</li>
-<li><p>不明确行为（undefined behavior）<br>尽可能避免</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> *p = <span class="number">0</span>;</span><br><span class="line"><span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; *p;</span><br><span class="line"></span><br><span class="line"><span class="keyword">char</span> name[] = <span class="string">"abc"</span>;</span><br><span class="line"><span class="keyword">char</span> c = name[<span class="number">5</span>];</span><br><span class="line"></span><br><span class="line">i = i++ + ++i;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<ul>
-<li><p>接口<br>C++没有像Java、.Net语言那样的接口<br>一般指函数的签名或class的可访问元素或针对某template类型参数需为有效的一个表达式</p>
-</li>
-<li><p>客户<br>使用你所写代码（通常是一些接口）的人或物。<br>函数的客户：其使用者，程序中调用函数（或取其地址）的那部分，编写并维护那些代码的人。<br>书中常指程序员。</p>
-</li>
-</ul>
-<h3 id="TR1（“Technical_Report_1”）">TR1（“Technical Report 1”）</h3><ul>
-<li>一份规范，描述加入C++标准程序库的诸多新机能</li>
-<li>这些机能以新的class templates和function templates形式体现</li>
-<li>针对的题目有hash table，reference-counting smart pointers，regular expressions，以及更多</li>
-<li>所有TR1组件都被置于命名空间tr1内，后者嵌套于命名空间std内<h3 id="Boost">Boost</h3></li>
-<li>组织，亦是<a href="http://boost.org" target="_blank" rel="external">网站</a>，提供可移植、同僚复审、源码开放的C++程序库。</li>
-<li>大多数TR1机能是以Boost的工作为基础。</li>
-<li>Boost提供比TR1更多的东西<br>.<br>.<br>.<br>.<br>第一次写读书笔记，可能以后形式会有所改变，应该更关注读后的感想，而不是简单的罗列知识点。</li>
-</ul>
+</ol>
+<h3 id="C++11">C++11</h3><p>获取新版gcc、g++编译器，方可支持C++11<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install gcc-<span class="number">4.7</span> g++-<span class="number">4.7</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="安装Mysql">安装Mysql</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install mysql-server</span><br><span class="line">sudo apt-get install libmysqlcppconn-dev</span><br></pre></td></tr></table></figure>
+<h3 id="编译要执行Mysql操作的C文件">编译要执行Mysql操作的C文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">g++ test.cpp -o test.o `mysql_config --cflags --libs`</span><br></pre></td></tr></table></figure>
+<p>`mysql_config –cflags –libs`必须放在最后，具体见<a href="http://stackoverflow.com/questions/10970356/undefined-reference-to-mysql-init?answertab=oldest#tab-top" target="_blank" rel="external">这</a>。</p>
 </span>
       
     </div>
@@ -332,6 +298,10 @@
           
             <a href="/tags/C/" rel="tag">#C++</a>
           
+            <a href="/tags/Mysql/" rel="tag">#Mysql</a>
+          
+            <a href="/tags/Ubuntu/" rel="tag">#Ubuntu</a>
+          
         </div>
       
 
@@ -339,13 +309,11 @@
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2015/09/15/practice-summary/" rel="prev">Win7下装64位Ubuntu虚拟机 及 Ubuntu下C++连接Mysql 遇到的一些问题</a>
-            
           </div>
 
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/09/13/first/" rel="next">在Github的第一篇文章</a>
+              <a href="/2015/09/14/EffectiveC++-0/" rel="next">《Effective C++》读书笔记0译序和导读</a>
             
           </div>
         </div>
@@ -360,10 +328,10 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2015/09/14/EffectiveC++-0/"
-     data-title="《Effective C++》读书笔记0译序和导读"
+        <div class="ds-share flat" data-thread-key="2015/09/15/practice-summary/"
+     data-title="Win7下装64位Ubuntu虚拟机 及 Ubuntu下C++连接Mysql 遇到的一些问题"
      data-content=""
-     data-url="http://yzbyzz.github.io/2015/09/14/EffectiveC++-0/">
+     data-url="http://yzbyzz.github.io/2015/09/15/practice-summary/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -389,8 +357,8 @@
         
           <div class="comments" id="comments">
             
-              <div class="ds-thread" data-thread-key="2015/09/14/EffectiveC++-0/"
-                   data-title="《Effective C++》读书笔记0译序和导读" data-url="http://yzbyzz.github.io/2015/09/14/EffectiveC++-0/">
+              <div class="ds-thread" data-thread-key="2015/09/15/practice-summary/"
+                   data-title="Win7下装64位Ubuntu虚拟机 及 Ubuntu下C++连接Mysql 遇到的一些问题" data-url="http://yzbyzz.github.io/2015/09/15/practice-summary/">
               </div>
             
           </div>
@@ -486,7 +454,7 @@
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#C++编程范型（Programming_Paradigms）"><span class="nav-number">1.</span> <span class="nav-text">C++编程范型（Programming Paradigms）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#中英简繁术语对照"><span class="nav-number">2.</span> <span class="nav-text">中英简繁术语对照</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0_导读"><span class="nav-number"></span> <span class="nav-text">0 导读</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#语（Terminology）"><span class="nav-number">1.</span> <span class="nav-text">语（Terminology）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TR1（“Technical_Report_1”）"><span class="nav-number">2.</span> <span class="nav-text">TR1（“Technical Report 1”）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Boost"><span class="nav-number">3.</span> <span class="nav-text">Boost</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#装64位虚拟机的条件"><span class="nav-number">1.</span> <span class="nav-text">装64位虚拟机的条件</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#VirtualBox中实现Ubuntu自适应窗口大小"><span class="nav-number"></span> <span class="nav-text">VirtualBox中实现Ubuntu自适应窗口大小</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#VirtualBox实现Win7_和_Ubuntu共享文件夹"><span class="nav-number"></span> <span class="nav-text">VirtualBox实现Win7 和 Ubuntu共享文件夹</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#C++11"><span class="nav-number"></span> <span class="nav-text">C++11</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Mysql"><span class="nav-number"></span> <span class="nav-text">安装Mysql</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#编译要执行Mysql操作的C文件"><span class="nav-number"></span> <span class="nav-text">编译要执行Mysql操作的C文件</span></a></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
