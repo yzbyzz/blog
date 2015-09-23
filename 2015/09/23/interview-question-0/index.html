@@ -30,7 +30,7 @@
 
 
 
-  <meta name="keywords" content="C++," />
+  <meta name="keywords" content="C++,Unix," />
 
 
 
@@ -39,28 +39,52 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1" />
 
 
-<meta name="description" content="C++编程范型（Programming Paradigms）
-基于过程 Procedural-based
-基于对象 Object-based
-面向对象 Object-oriented
-泛型技术 GenericsC++断想">
+<meta name="description" content="【未完待续】
+
+static作用
+修饰全局变量或函数时将其作用域限定在当前文件
+修饰局部变量时，将其生命周期延长至程序结束
+类中static成员，属于类的成员，而不属于一个特定的对象
+
+
+
+
+按存储区域分: 全局变量、静态全局变量和静态局部变量都存放在内存的静态存储区域 局部变量存放在内存的栈区。
+
+按作用域分:全局变量在整个工程文件内都有效；静态全局变量只在定义它的文件内有效；静态局部变量只在定">
 <meta property="og:type" content="article">
-<meta property="og:title" content="《Effective C++》读书笔记0译序和导读">
-<meta property="og:url" content="http://yzbyzz.github.io/2015/09/14/EffectiveC++-0/index.html">
+<meta property="og:title" content="最近被问到的面试题">
+<meta property="og:url" content="http://yzbyzz.github.io/2015/09/23/interview-question-0/index.html">
 <meta property="og:site_name" content="z.Note">
-<meta property="og:description" content="C++编程范型（Programming Paradigms）
-基于过程 Procedural-based
-基于对象 Object-based
-面向对象 Object-oriented
-泛型技术 GenericsC++断想">
-<meta property="og:updated_time" content="2015-09-14T15:26:25.450Z">
+<meta property="og:description" content="【未完待续】
+
+static作用
+修饰全局变量或函数时将其作用域限定在当前文件
+修饰局部变量时，将其生命周期延长至程序结束
+类中static成员，属于类的成员，而不属于一个特定的对象
+
+
+
+
+按存储区域分: 全局变量、静态全局变量和静态局部变量都存放在内存的静态存储区域 局部变量存放在内存的栈区。
+
+按作用域分:全局变量在整个工程文件内都有效；静态全局变量只在定义它的文件内有效；静态局部变量只在定">
+<meta property="og:updated_time" content="2015-09-23T13:34:38.782Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="《Effective C++》读书笔记0译序和导读">
-<meta name="twitter:description" content="C++编程范型（Programming Paradigms）
-基于过程 Procedural-based
-基于对象 Object-based
-面向对象 Object-oriented
-泛型技术 GenericsC++断想">
+<meta name="twitter:title" content="最近被问到的面试题">
+<meta name="twitter:description" content="【未完待续】
+
+static作用
+修饰全局变量或函数时将其作用域限定在当前文件
+修饰局部变量时，将其生命周期延长至程序结束
+类中static成员，属于类的成员，而不属于一个特定的对象
+
+
+
+
+按存储区域分: 全局变量、静态全局变量和静态局部变量都存放在内存的静态存储区域 局部变量存放在内存的栈区。
+
+按作用域分:全局变量在整个工程文件内都有效；静态全局变量只在定义它的文件内有效；静态局部变量只在定">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -70,7 +94,7 @@
   };
 </script>
 
-  <title> 《Effective C++》读书笔记0译序和导读 | z.Note </title>
+  <title> 最近被问到的面试题 | z.Note </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -206,7 +230,7 @@
           
           
             
-              《Effective C++》读书笔记0译序和导读
+              最近被问到的面试题
             
           
         </h1>
@@ -215,8 +239,8 @@
       <div class="post-meta">
         <span class="post-time">
           发表于
-          <time itemprop="dateCreated" datetime="2015-09-14T23:20:19+08:00" content="2015-09-14">
-            2015-09-14
+          <time itemprop="dateCreated" datetime="2015-09-23T21:25:56+08:00" content="2015-09-23">
+            2015-09-23
           </time>
         </span>
 
@@ -225,8 +249,8 @@
             &nbsp; | &nbsp; 分类于
             
               <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/读书笔记/" itemprop="url" rel="index">
-                  <span itemprop="name">读书笔记</span>
+                <a href="/categories/技术点滴/" itemprop="url" rel="index">
+                  <span itemprop="name">技术点滴</span>
                 </a>
               </span>
 
@@ -241,8 +265,8 @@
           
             <span class="post-comments-count">
               &nbsp; | &nbsp;
-              <a href="/2015/09/14/EffectiveC++-0/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2015/09/14/EffectiveC++-0/" itemprop="commentsCount"></span>
+              <a href="/2015/09/23/interview-question-0/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2015/09/23/interview-question-0/" itemprop="commentsCount"></span>
               </a>
             </span>
           
@@ -256,72 +280,91 @@
       
 
       
-        <span itemprop="articleBody"><h3 id="C++编程范型（Programming_Paradigms）">C++编程范型（Programming Paradigms）</h3><ul>
-<li>基于过程 Procedural-based</li>
-<li>基于对象 Object-based</li>
-<li>面向对象 Object-oriented</li>
-<li>泛型技术 Generics<br><a href="http://oss.org.cn/ossdocs/gnu/cpp_think.html" target="_blank" rel="external">C++断想</a></li>
+        <span itemprop="articleBody"><p>【未完待续】</p>
+<ol>
+<li>static作用<ol>
+<li>修饰全局变量或函数时将其作用域限定在当前文件</li>
+<li>修饰局部变量时，将其生命周期延长至程序结束</li>
+<li>类中static成员，属于类的成员，而不属于一个特定的对象</li>
+</ol>
+</li>
+</ol>
+<ul>
+<li><p>按存储区域分:<br> 全局变量、静态全局变量和静态局部变量都存放在内存的静态存储区域<br> 局部变量存放在内存的栈区。</p>
+<ul>
+<li>按作用域分:<br>全局变量在整个工程文件内都有效；<br>静态全局变量只在定义它的文件内有效；<br>静态局部变量只在定义它的函数内有效，只是程序仅分配一次内存，函数返回后，该变量不会消失；<br>局部变量在定义它的函数内有效，但是函数返回后失效。</li>
 </ul>
+<p><a href="http://www.cnblogs.com/kane_zzt/archive/2009/05/18/1459697.html" target="_blank" rel="external">Static 作用详述</a></p>
 <a id="more"></a>
-<h3 id="中英简繁术语对照">中英简繁术语对照</h3><blockquote>
-<ul>
-<li>object 在Object-oriented中的真正意义是“物体、物件”，而非“对象、目标”</li>
-</ul>
-</blockquote>
-<h2 id="0_导读">0 导读</h2><h3 id="语（Terminology）">语（Terminology）</h3><ul>
-<li>声明式<br>告诉编译器某个东西的名称和类型，但略去细节。<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">extren <span class="keyword">int</span> x;</span><br><span class="line"><span class="built_in">std</span>::<span class="keyword">size_t</span> numDigits(<span class="keyword">int</span> number);</span><br><span class="line"><span class="keyword">class</span> Widget;</span><br><span class="line"></span><br><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="keyword">class</span> GraphNode;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<blockquote>
+<ol>
+<li>类中成员用static修饰有什么影响和作用<br> 静态成员是属于整个类的而不是某个对象，静态成员变量只存储一份供所有对象共用。所以在所有对象中都可以共享它。实现多个对象之间的数据共享不会破坏隐藏的原则，保证了安全性还可以节省内存。<br>影响：</li>
+</ol>
 <ul>
-<li>size_t是一个typedef，unsigned类型。</li>
-<li>函数的声明揭示其签名式，也就是参数和返回类型。一个函数的签名等同于该函数的类型。</li>
-<li>C++对签名式的官方定义并不包括函数的返回类型。</li>
-</ul>
-</blockquote>
-<ul>
-<li><p>定义式<br>提供编译器一些声明式所遗漏的细节。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> x;</span><br><span class="line"><span class="built_in">std</span>::<span class="keyword">size_t</span> numDigits(<span class="keyword">int</span> number)&#123;</span><br><span class="line">    <span class="built_in">std</span>::<span class="keyword">size_t</span> digitsSoFar = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span>( (number /= <span class="number">10</span>) != <span class="number">0</span>) ++digitsSoFar;</span><br><span class="line">    <span class="keyword">return</span> digitsSoFar;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">class</span> Widget&#123;</span><br><span class="line"><span class="keyword">public</span> :</span><br><span class="line">    Widget();</span><br><span class="line">    ~Widget();</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="function"><span class="keyword">class</span> <span class="title">GraphNode</span><span class="params">(</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    GraphNode()</span></span>;</span><br><span class="line">    ~GraphNode();</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>初始化<br>“给予对象初值”的过程。</p>
-<blockquote>
-<ul>
-<li>构造函数声明为explicit，阻止构造函数被用来执行隐式类型转换，但仍可被用来执行显示类型转换。</li>
-</ul>
-</blockquote>
+<li>静态成员函数不能调用非静态成员函数，反之可以。</li>
+<li>静态成员变量使用前必须先初始化。<br>作用：</li>
+<li>统计对象个数</li>
+<li><p>共享数据</p>
+<p><a href="http://blog.csdn.net/morewindows/article/details/6721430" target="_blank" rel="external">C++ 类的静态成员详细讲解</a></p>
 </li>
 </ul>
+<ol>
+<li>基类调用子类中函数 </li>
+</ol>
 <ul>
-<li>copy构造函数<br>以同类型对象初始化自我对象</li>
+<li>基类中函数定义为虚函数，子类中覆盖该虚函数。</li>
+<li>父类的指针或引用指向子类对象<br>【重载、重定义、覆盖】<ul>
+<li>重载： 函数的名字相同，但签名不同</li>
+<li>重定义： 子类中的函数与基类的函数名字和签名都相同，父类函数不是虚函数，子类函数可以是虚函数</li>
+<li>覆盖： 重定义的父类函数是虚函数。<br><a href="http://www.wutianqi.com/?p=3171" target="_blank" rel="external">C++ 重载(overload)、重写(overrride)、重定义(redefine)总结</a><br><a href="http://www.cnblogs.com/ustc11wj/archive/2012/08/11/2637318.html" target="_blank" rel="external">C++ 返回类型协变</a><br>协变：父类中函数中的返回类型是C类的指针或引用，子类对应覆盖函数返回的类型是C类或C类子类的指针或引用。</li>
 </ul>
+</li>
+</ul>
+<ol>
+<li>类的拷贝构造函数，参数为什么用引用类型<br>若不用引用，则调用拷贝构造函数时，实参到形参的过程会调用拷贝构造函数，如此会造成无限递归。<br>拷贝构造函数的用处：</li>
+</ol>
 <ul>
-<li>copy assignment操作符<br>从另一个同型对象拷贝其值到自我对象</li>
+<li>同类的一个对象去初始化该类的另一个对象时使用</li>
+<li>当函数的形参是类的对象，调用函数时，形参与实参结合时使用。这时要在内存新建立一个局部对象，并把实参拷贝到新的对象中。要调用拷贝构造函数；</li>
+<li>当函数的返回值是类对象时使用。理由，是要先建立一个临时对象，再返回调用者。为什么不直接用要返回的局部对象呢？因为局部对象在离开建立它的函数时就消亡了，所以编译系统会在调用函数的表达式中创建一个临时对象，该临时对象的生存周期只在函数调用处的表达式中。所谓return X，实际上是调用拷贝构造函数把X拷入临时对象。如果返回的是变量，处理过程类似，只是不调用构造函数。<br><a href="http://www.weixueyuan.net/view/5840.html" target="_blank" rel="external">C++引用与复制构造函数</a></li>
 </ul>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> Widget;</span><br><span class="line">Widget w1;</span><br><span class="line"><span class="function">Widget <span class="title">w2</span><span class="params">(w1)</span></span>; <span class="comment">//拷贝构造</span></span><br><span class="line">w2 = w1; <span class="comment">//拷贝赋值</span></span><br><span class="line">Widget w3 = w1;<span class="comment">//拷贝构造</span></span><br></pre></td></tr></table></figure>
+<ol>
+<li>虚函数和纯虚函数的区别</li>
+</ol>
 <ul>
-<li><p>Pass-by-value<br>调用copy构造函数 </p>
-</li>
-<li><p>STL（标准模板库）<br>许多相关机能以函数对象（function object，“行为像函数”的对象，重载operator( )（function call操作符））实现。</p>
-</li>
-<li><p>不明确行为（undefined behavior）<br>尽可能避免</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> *p = <span class="number">0</span>;</span><br><span class="line"><span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; *p;</span><br><span class="line"></span><br><span class="line"><span class="keyword">char</span> name[] = <span class="string">"abc"</span>;</span><br><span class="line"><span class="keyword">char</span> c = name[<span class="number">5</span>];</span><br><span class="line"></span><br><span class="line">i = i++ + ++i;</span><br></pre></td></tr></table></figure>
-</li>
+<li>定义一个函数为虚函数，不代表函数为不被实现的函数。</li>
+<li>定义为虚函数是为了允许用基类的指针来调用子类的这个函数。</li>
+<li><ul>
+<li>纯虚函数是可以有函数体的！</li>
 </ul>
-<ul>
-<li><p>接口<br>C++没有像Java、.Net语言那样的接口<br>一般指函数的签名或class的可访问元素或针对某template类型参数需为有效的一个表达式</p>
 </li>
-<li><p>客户<br>使用你所写代码（通常是一些接口）的人或物。<br>函数的客户：其使用者，程序中调用函数（或取其地址）的那部分，编写并维护那些代码的人。<br>书中常指程序员。</p>
+<li>有纯虚函数的类为抽象类，不能定义抽象类的对象</li>
+<li>在有动态分配堆上内存的时候，析构函数必须是虚函数，但没有必要是纯虚的。</li>
+<li>友元不是成员函数，只有成员函数才可以是虚拟的<br><a href="http://blog.csdn.net/hackbuteer1/article/details/7558868" target="_blank" rel="external">虚函数和纯虚函数的区别</a>【文中说纯虚函数不能被实现，经评论和自己编码验证为错】</li>
+<li><a href="http://www.cnblogs.com/chio/archive/2007/09/10/888260.html" target="_blank" rel="external">虚析构函数、纯虚析构函数</a></li>
+</ul>
+<ol>
+<li><p>虚函数实现机制</p>
+<p><a href="http://blog.csdn.net/haoel/article/details/1948051" target="_blank" rel="external">C++ 虚函数表解析</a></p>
 </li>
-</ul>
-<h3 id="TR1（“Technical_Report_1”）">TR1（“Technical Report 1”）</h3><ul>
-<li>一份规范，描述加入C++标准程序库的诸多新机能</li>
-<li>这些机能以新的class templates和function templates形式体现</li>
-<li>针对的题目有hash table，reference-counting smart pointers，regular expressions，以及更多</li>
-<li>所有TR1组件都被置于命名空间tr1内，后者嵌套于命名空间std内<h3 id="Boost">Boost</h3></li>
-<li>组织，亦是<a href="http://boost.org" target="_blank" rel="external">网站</a>，提供可移植、同僚复审、源码开放的C++程序库。</li>
-<li>大多数TR1机能是以Boost的工作为基础。</li>
-<li>Boost提供比TR1更多的东西<br>.<br>.<br>.<br>.<br>第一次写读书笔记，可能以后形式会有所改变，应该更关注读后的感想，而不是简单的罗列知识点。</li>
-</ul>
+<li><p>union和struct求sizeof</p>
+</li>
+<li>函数指针</li>
+<li>堆栈的区别</li>
+<li>程序分段</li>
+<li>库函数和系统函数的区别和关系</li>
+<li>用户态、系统态、内核态</li>
+<li>爆栈有什么后果，有什么解决方法，栈的大小</li>
+<li>progam pack</li>
+<li>读文件的函数，区别，fopen。read</li>
+<li>进程死锁的原因和解决方法及各种方法的优劣</li>
+<li>计算机网络熟不熟</li>
+<li>对用户给定唯一的id，如何维护使之在程序崩溃时仍不会出错</li>
+<li>实现LRU</li>
+<li>求无序整型数组中第k大的数</li>
+<li>项目或课程设计中大的挑战</li>
+</ol>
 </span>
       
     </div>
@@ -332,6 +375,8 @@
           
             <a href="/tags/C/" rel="tag">#C++</a>
           
+            <a href="/tags/Unix/" rel="tag">#Unix</a>
+          
         </div>
       
 
@@ -339,13 +384,11 @@
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2015/09/15/practice-summary/" rel="prev">Win7下装64位Ubuntu虚拟机 及 Ubuntu下C++连接Mysql 遇到的一些问题</a>
-            
           </div>
 
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/09/13/first/" rel="next">在Github的第一篇文章</a>
+              <a href="/2015/09/15/practice-summary/" rel="next">Win7下装64位Ubuntu虚拟机 及 Ubuntu下C++连接Mysql 遇到的一些问题</a>
             
           </div>
         </div>
@@ -360,10 +403,10 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2015/09/14/EffectiveC++-0/"
-     data-title="《Effective C++》读书笔记0译序和导读"
+        <div class="ds-share flat" data-thread-key="2015/09/23/interview-question-0/"
+     data-title="最近被问到的面试题"
      data-content=""
-     data-url="http://yzbyzz.github.io/2015/09/14/EffectiveC++-0/">
+     data-url="http://yzbyzz.github.io/2015/09/23/interview-question-0/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -389,8 +432,8 @@
         
           <div class="comments" id="comments">
             
-              <div class="ds-thread" data-thread-key="2015/09/14/EffectiveC++-0/"
-                   data-title="《Effective C++》读书笔记0译序和导读" data-url="http://yzbyzz.github.io/2015/09/14/EffectiveC++-0/">
+              <div class="ds-thread" data-thread-key="2015/09/23/interview-question-0/"
+                   data-title="最近被问到的面试题" data-url="http://yzbyzz.github.io/2015/09/23/interview-question-0/">
               </div>
             
           </div>
@@ -486,7 +529,7 @@
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#C++编程范型（Programming_Paradigms）"><span class="nav-number">1.</span> <span class="nav-text">C++编程范型（Programming Paradigms）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#中英简繁术语对照"><span class="nav-number">2.</span> <span class="nav-text">中英简繁术语对照</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0_导读"><span class="nav-number"></span> <span class="nav-text">0 导读</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#语（Terminology）"><span class="nav-number">1.</span> <span class="nav-text">语（Terminology）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TR1（“Technical_Report_1”）"><span class="nav-number">2.</span> <span class="nav-text">TR1（“Technical Report 1”）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Boost"><span class="nav-number">3.</span> <span class="nav-text">Boost</span></a></li></ol></div>
+              <p class="post-toc-empty">此文章未包含目录</p>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>

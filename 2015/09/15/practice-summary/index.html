@@ -57,7 +57,7 @@ CPU支持硬件虚拟化，且支持的开关打开
 CPU支持硬件虚拟化，且支持的开关打开
 
 前三个都比较明显。第四个通常intel virtual technology（硬件虚拟化）是关闭的。需要开机时进入BIOS修改为启动即可。进入BIOS的方式视具体电脑而定，通常为冷启动后按F2、F10、DEL等之一。">
-<meta property="og:updated_time" content="2015-09-15T15:26:04.290Z">
+<meta property="og:updated_time" content="2015-09-23T13:29:29.960Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Win7下装64位Ubuntu虚拟机 及 Ubuntu下C++连接Mysql 遇到的一些问题">
 <meta name="twitter:description" content="装64位虚拟机的条件
@@ -231,8 +231,8 @@ CPU支持硬件虚拟化，且支持的开关打开
             &nbsp; | &nbsp; 分类于
             
               <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/小结/" itemprop="url" rel="index">
-                  <span itemprop="name">小结</span>
+                <a href="/categories/技术点滴/" itemprop="url" rel="index">
+                  <span itemprop="name">技术点滴</span>
                 </a>
               </span>
 
@@ -288,6 +288,10 @@ CPU支持硬件虚拟化，且支持的开关打开
 <h3 id="安装Mysql">安装Mysql</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install mysql-server</span><br><span class="line">sudo apt-get install libmysqlcppconn-dev</span><br></pre></td></tr></table></figure>
 <h3 id="编译要执行Mysql操作的C文件">编译要执行Mysql操作的C文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">g++ test.cpp -o test.o `mysql_config --cflags --libs`</span><br></pre></td></tr></table></figure>
 <p>`mysql_config –cflags –libs`必须放在最后，具体见<a href="http://stackoverflow.com/questions/10970356/undefined-reference-to-mysql-init?answertab=oldest#tab-top" target="_blank" rel="external">这</a>。</p>
+<h3 id="apache安装、配置及cgi设置">apache安装、配置及cgi设置</h3><p><a href="http://blog.csdn.net/ahstusujian/article/details/7646201" target="_blank" rel="external">Ubuntu Apache的安装和配置以及CGI的设置</a></p>
+<h3 id="ubuntu误操作无法以root身份进入系统时如何恢复">ubuntu误操作无法以root身份进入系统时如何恢复</h3><p><a href="http://blog.csdn.net/luckywang1103/article/details/43157189" target="_blank" rel="external">ubuntu recovery模式</a></p>
+<hr>
+<p>才没几天，就偷懒直接贴链接了。</p>
 </span>
       
     </div>
@@ -308,6 +312,8 @@ CPU支持硬件虚拟化，且支持的开关打开
       
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2015/09/23/interview-question-0/" rel="prev">最近被问到的面试题</a>
             
           </div>
 
@@ -398,7 +404,7 @@ CPU支持硬件虚拟化，且支持的开关打开
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">3</span>
+              <span class="site-state-item-count">4</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -412,7 +418,7 @@ CPU支持硬件虚拟化，且支持的开关打开
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">3</span>
+              <span class="site-state-item-count">4</span>
               <span class="site-state-item-name">标签</span>
               </a>
           </div>
@@ -454,7 +460,7 @@ CPU支持硬件虚拟化，且支持的开关打开
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#装64位虚拟机的条件"><span class="nav-number">1.</span> <span class="nav-text">装64位虚拟机的条件</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#VirtualBox中实现Ubuntu自适应窗口大小"><span class="nav-number"></span> <span class="nav-text">VirtualBox中实现Ubuntu自适应窗口大小</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#VirtualBox实现Win7_和_Ubuntu共享文件夹"><span class="nav-number"></span> <span class="nav-text">VirtualBox实现Win7 和 Ubuntu共享文件夹</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#C++11"><span class="nav-number"></span> <span class="nav-text">C++11</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Mysql"><span class="nav-number"></span> <span class="nav-text">安装Mysql</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#编译要执行Mysql操作的C文件"><span class="nav-number"></span> <span class="nav-text">编译要执行Mysql操作的C文件</span></a></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#装64位虚拟机的条件"><span class="nav-number">1.</span> <span class="nav-text">装64位虚拟机的条件</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#VirtualBox中实现Ubuntu自适应窗口大小"><span class="nav-number"></span> <span class="nav-text">VirtualBox中实现Ubuntu自适应窗口大小</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#VirtualBox实现Win7_和_Ubuntu共享文件夹"><span class="nav-number"></span> <span class="nav-text">VirtualBox实现Win7 和 Ubuntu共享文件夹</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#C++11"><span class="nav-number"></span> <span class="nav-text">C++11</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Mysql"><span class="nav-number"></span> <span class="nav-text">安装Mysql</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#编译要执行Mysql操作的C文件"><span class="nav-number"></span> <span class="nav-text">编译要执行Mysql操作的C文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#apache安装、配置及cgi设置"><span class="nav-number"></span> <span class="nav-text">apache安装、配置及cgi设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ubuntu误操作无法以root身份进入系统时如何恢复"><span class="nav-number"></span> <span class="nav-text">ubuntu误操作无法以root身份进入系统时如何恢复</span></a></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
@@ -488,6 +494,13 @@ CPU支持硬件虚拟化，且支持的开关打开
     NexT.Mist
   </a>
 </div>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+<span id="busuanzi_container_site_pv">
+     | 本站总访问量<span id="busuanzi_value_site_pv"></span>次
+</span>
 
 
  </div>
