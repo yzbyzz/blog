@@ -30,7 +30,7 @@
 
 
 
-  <meta name="keywords" content="Hexo,next" />
+  <meta name="keywords" content="C++,Mysql,Ubuntu," />
 
 
 
@@ -39,31 +39,34 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1" />
 
 
-<<<<<<< HEAD
-<meta name="description" content="用过csdn和博客园，都是三天打渔两天晒网。零星地写了几篇没甚营养的所谓题解。这次花费了一番功夫才搭好的博客，希望能坚持下去。学习、思考、总结、分享、交流。也给自己以后可以闲来翻翻，然后发现自己曾经多么稚嫩。
-中学课本有不少古文。也为了考试背了一些。但明显很多中学背的东西还没一些小学时背的记得牢。现在，对中学印象最深的一篇古文是上课没讲过的《谏太宗十思疏》。里面有一句话“有善始者实繁，能克终者盖寡">
-=======
-<meta name="description" content="用过csdn和博客园，都是三天打渔两天晒网。零星地写了几篇没甚营养的所谓题解。这次花费了一番功夫才搭好的博客，希望能坚持下去。学习、思考、总结、分享、交流。也给自己以后可以闲来翻翻，然后发现自己曾经多么稚嫩。">
->>>>>>> d7823bad859d1d8be0d8bd6c19fcf592a63a1cd6
+<meta name="description" content="装64位虚拟机的条件
+64位CPU
+64位操作系统
+64位的镜像
+CPU支持硬件虚拟化，且支持的开关打开
+
+前三个都比较明显。第四个通常intel virtual technology（硬件虚拟化）是关闭的。需要开机时进入BIOS修改为启动即可。进入BIOS的方式视具体电脑而定，通常为冷启动后按F2、F10、DEL等之一。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="在Github的第一篇文章">
-<meta property="og:url" content="http://yzbyzz.github.io/2015/09/13/first/index.html">
+<meta property="og:title" content="Win7下装64位Ubuntu虚拟机 及 Ubuntu下C++连接Mysql 遇到的一些问题">
+<meta property="og:url" content="http://yzbyzz.github.io/2015/09/15/practice-summary/index.html">
 <meta property="og:site_name" content="z.Note">
-<<<<<<< HEAD
-<meta property="og:description" content="用过csdn和博客园，都是三天打渔两天晒网。零星地写了几篇没甚营养的所谓题解。这次花费了一番功夫才搭好的博客，希望能坚持下去。学习、思考、总结、分享、交流。也给自己以后可以闲来翻翻，然后发现自己曾经多么稚嫩。
-中学课本有不少古文。也为了考试背了一些。但明显很多中学背的东西还没一些小学时背的记得牢。现在，对中学印象最深的一篇古文是上课没讲过的《谏太宗十思疏》。里面有一句话“有善始者实繁，能克终者盖寡">
-<meta property="og:updated_time" content="2015-09-13T07:20:57.214Z">
+<meta property="og:description" content="装64位虚拟机的条件
+64位CPU
+64位操作系统
+64位的镜像
+CPU支持硬件虚拟化，且支持的开关打开
+
+前三个都比较明显。第四个通常intel virtual technology（硬件虚拟化）是关闭的。需要开机时进入BIOS修改为启动即可。进入BIOS的方式视具体电脑而定，通常为冷启动后按F2、F10、DEL等之一。">
+<meta property="og:updated_time" content="2015-09-23T13:29:29.960Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="在Github的第一篇文章">
-<meta name="twitter:description" content="用过csdn和博客园，都是三天打渔两天晒网。零星地写了几篇没甚营养的所谓题解。这次花费了一番功夫才搭好的博客，希望能坚持下去。学习、思考、总结、分享、交流。也给自己以后可以闲来翻翻，然后发现自己曾经多么稚嫩。
-中学课本有不少古文。也为了考试背了一些。但明显很多中学背的东西还没一些小学时背的记得牢。现在，对中学印象最深的一篇古文是上课没讲过的《谏太宗十思疏》。里面有一句话“有善始者实繁，能克终者盖寡">
-=======
-<meta property="og:description" content="用过csdn和博客园，都是三天打渔两天晒网。零星地写了几篇没甚营养的所谓题解。这次花费了一番功夫才搭好的博客，希望能坚持下去。学习、思考、总结、分享、交流。也给自己以后可以闲来翻翻，然后发现自己曾经多么稚嫩。">
-<meta property="og:updated_time" content="2015-09-13T14:15:37.439Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="在Github的第一篇文章">
-<meta name="twitter:description" content="用过csdn和博客园，都是三天打渔两天晒网。零星地写了几篇没甚营养的所谓题解。这次花费了一番功夫才搭好的博客，希望能坚持下去。学习、思考、总结、分享、交流。也给自己以后可以闲来翻翻，然后发现自己曾经多么稚嫩。">
->>>>>>> d7823bad859d1d8be0d8bd6c19fcf592a63a1cd6
+<meta name="twitter:title" content="Win7下装64位Ubuntu虚拟机 及 Ubuntu下C++连接Mysql 遇到的一些问题">
+<meta name="twitter:description" content="装64位虚拟机的条件
+64位CPU
+64位操作系统
+64位的镜像
+CPU支持硬件虚拟化，且支持的开关打开
+
+前三个都比较明显。第四个通常intel virtual technology（硬件虚拟化）是关闭的。需要开机时进入BIOS修改为启动即可。进入BIOS的方式视具体电脑而定，通常为冷启动后按F2、F10、DEL等之一。">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -73,7 +76,7 @@
   };
 </script>
 
-  <title> 在Github的第一篇文章 | z.Note </title>
+  <title> Win7下装64位Ubuntu虚拟机 及 Ubuntu下C++连接Mysql 遇到的一些问题 | z.Note </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -209,7 +212,7 @@
           
           
             
-              在Github的第一篇文章
+              Win7下装64位Ubuntu虚拟机 及 Ubuntu下C++连接Mysql 遇到的一些问题
             
           
         </h1>
@@ -218,12 +221,8 @@
       <div class="post-meta">
         <span class="post-time">
           发表于
-<<<<<<< HEAD
-          <time itemprop="dateCreated" datetime="2015-09-13T15:20:57+08:00" content="2015-09-13">
-=======
-          <time itemprop="dateCreated" datetime="2015-09-13T22:15:37+08:00" content="2015-09-13">
->>>>>>> d7823bad859d1d8be0d8bd6c19fcf592a63a1cd6
-            2015-09-13
+          <time itemprop="dateCreated" datetime="2015-09-15T22:46:47+08:00" content="2015-09-15">
+            2015-09-15
           </time>
         </span>
 
@@ -232,8 +231,8 @@
             &nbsp; | &nbsp; 分类于
             
               <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/随想/" itemprop="url" rel="index">
-                  <span itemprop="name">随想</span>
+                <a href="/categories/技术点滴/" itemprop="url" rel="index">
+                  <span itemprop="name">技术点滴</span>
                 </a>
               </span>
 
@@ -248,8 +247,8 @@
           
             <span class="post-comments-count">
               &nbsp; | &nbsp;
-              <a href="/2015/09/13/first/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2015/09/13/first/" itemprop="commentsCount"></span>
+              <a href="/2015/09/15/practice-summary/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2015/09/15/practice-summary/" itemprop="commentsCount"></span>
               </a>
             </span>
           
@@ -263,38 +262,68 @@
       
 
       
-<<<<<<< HEAD
-        <span itemprop="articleBody"><p>用过csdn和博客园，都是三天打渔两天晒网。零星地写了几篇没甚营养的所谓题解。这次花费了一番功夫才搭好的博客，希望能坚持下去。学习、思考、总结、分享、交流。也给自己以后可以闲来翻翻，然后发现自己曾经多么稚嫩。</p>
-=======
-        <span itemprop="articleBody"><p>用过csdn和博客园，都是三天打渔两天晒网。零星地写了几篇没甚营养的所谓题解。这次花费了一番功夫才搭好的博客，希望能坚持下去。学习、思考、总结、分享、交流。也给自己以后可以闲来翻翻，然后发现自己曾经多么稚嫩。<br><a id="more"></a></p>
->>>>>>> d7823bad859d1d8be0d8bd6c19fcf592a63a1cd6
-<p>中学课本有不少古文。也为了考试背了一些。但明显很多中学背的东西还没一些小学时背的记得牢。现在，对中学印象最深的一篇古文是上课没讲过的《谏太宗十思疏》。里面有一句话“有善始者实繁，能克终者盖寡”。当时闲着无聊翻了一遍文章，就只记住了这句话。大概是觉得有点像在说自己？希望这一次不会如此。</p>
-<p>高中老师里最有性格的大概是高二的班主 小明（名字都这么任性）了，教化学。时常做一些让人摸不着头脑的事。像晚自习突然来个默写化学方程式。然后没写对的抄100遍。等大家都写的焦头烂额，又来了句不用抄了。幸好当时我没抄。不过不是因为全对，而是因为默写后没有马上收本子，过了一个课间才收。我翻了书，用其他颜色的笔标记了错的地方，于是幸免于难。</p>
-<p>这其实也不是让我记住小明的最主要原因。有一次上课还是晚自习，已经忘记了。原话也记不清了，大概就是说做事情不要总想着等什么时候或等怎样怎样了再去做。否则你这件事就永远办不成了。当时还举了他自己的例子，也记不清了。但这句话我至今记得。而且时常发现自己处于这种处境中，但也仅仅只是意识到，却没有做什么来摆脱。</p>
-<p>简单来说就是拖延症。嗯，改掉拖延症，从明天开始。</p>
+        <span itemprop="articleBody"><h4 id="装64位虚拟机的条件">装64位虚拟机的条件</h4><ol>
+<li>64位CPU</li>
+<li>64位操作系统</li>
+<li>64位的镜像</li>
+<li>CPU支持硬件虚拟化，且支持的开关打开</li>
+</ol>
+<p>前三个都比较明显。第四个通常intel virtual technology（硬件虚拟化）是关闭的。需要开机时进入BIOS修改为启动即可。进入BIOS的方式视具体电脑而定，通常为冷启动后按F2、F10、DEL等之一。</p>
+<a id="more"></a>
+<h3 id="VirtualBox中实现Ubuntu自适应窗口大小">VirtualBox中实现Ubuntu自适应窗口大小</h3><ol>
+<li>开启Ubuntu虚拟机，点击VirtualBox左上菜单栏“设备”-“安装增强功能”</li>
+<li>在Ubuntu中打开文件夹，可看到有光盘VBOXADDITIONS_xxx，点击后进入光盘目录，再点击右上角“Auto run”，执行完命令后重启即可。</li>
+</ol>
+<h3 id="VirtualBox实现Win7_和_Ubuntu共享文件夹">VirtualBox实现Win7 和 Ubuntu共享文件夹</h3><ol>
+<li>在Win7下创建一个目录。如“D:\Share”</li>
+<li>在VirtualBox中选中Ubuntu，右键“设置”-“共享文件夹”,<br>“添加文件夹”，路径选中刚才创建的文件夹，名称可另取。如“WShare”。</li>
+<li><p>在Ubuntu中创建目录。名字任意。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir ~/ushare</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>挂载共享文件夹WShare到ushare处。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo mount -t vboxsf WShare ~/ushare</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="C++11">C++11</h3><p>获取新版gcc、g++编译器，方可支持C++11<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install gcc-<span class="number">4.7</span> g++-<span class="number">4.7</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="安装Mysql">安装Mysql</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install mysql-server</span><br><span class="line">sudo apt-get install libmysqlcppconn-dev</span><br></pre></td></tr></table></figure>
+<h3 id="编译要执行Mysql操作的C文件">编译要执行Mysql操作的C文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">g++ test.cpp -o test.o `mysql_config --cflags --libs`</span><br></pre></td></tr></table></figure>
+<p>`mysql_config –cflags –libs`必须放在最后，具体见<a href="http://stackoverflow.com/questions/10970356/undefined-reference-to-mysql-init?answertab=oldest#tab-top" target="_blank" rel="external">这</a>。</p>
+<h3 id="apache安装、配置及cgi设置">apache安装、配置及cgi设置</h3><p><a href="http://blog.csdn.net/ahstusujian/article/details/7646201" target="_blank" rel="external">Ubuntu Apache的安装和配置以及CGI的设置</a></p>
+<h3 id="ubuntu误操作无法以root身份进入系统时如何恢复">ubuntu误操作无法以root身份进入系统时如何恢复</h3><p><a href="http://blog.csdn.net/luckywang1103/article/details/43157189" target="_blank" rel="external">ubuntu recovery模式</a></p>
+<hr>
+<p>才没几天，就偷懒直接贴链接了。</p>
 </span>
       
     </div>
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/C/" rel="tag">#C++</a>
+          
+            <a href="/tags/Mysql/" rel="tag">#Mysql</a>
+          
+            <a href="/tags/Ubuntu/" rel="tag">#Ubuntu</a>
+          
+        </div>
+      
 
       
-<<<<<<< HEAD
-=======
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2015/09/14/EffectiveC++-0/" rel="prev">《Effective C++》读书笔记0译序和导读</a>
+              <a href="/2015/09/23/interview-question-0/" rel="prev">最近被问到的面试题</a>
             
           </div>
 
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2015/09/14/EffectiveC++-0/" rel="next">《Effective C++》读书笔记0译序和导读</a>
+            
           </div>
         </div>
       
->>>>>>> d7823bad859d1d8be0d8bd6c19fcf592a63a1cd6
 
       
       
@@ -305,10 +334,10 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2015/09/13/first/"
-     data-title="在Github的第一篇文章"
+        <div class="ds-share flat" data-thread-key="2015/09/15/practice-summary/"
+     data-title="Win7下装64位Ubuntu虚拟机 及 Ubuntu下C++连接Mysql 遇到的一些问题"
      data-content=""
-     data-url="http://yzbyzz.github.io/2015/09/13/first/">
+     data-url="http://yzbyzz.github.io/2015/09/15/practice-summary/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -334,8 +363,8 @@
         
           <div class="comments" id="comments">
             
-              <div class="ds-thread" data-thread-key="2015/09/13/first/"
-                   data-title="在Github的第一篇文章" data-url="http://yzbyzz.github.io/2015/09/13/first/">
+              <div class="ds-thread" data-thread-key="2015/09/15/practice-summary/"
+                   data-title="Win7下装64位Ubuntu虚拟机 及 Ubuntu下C++连接Mysql 遇到的一些问题" data-url="http://yzbyzz.github.io/2015/09/15/practice-summary/">
               </div>
             
           </div>
@@ -375,33 +404,21 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-<<<<<<< HEAD
-              <span class="site-state-item-count">1</span>
-=======
               <span class="site-state-item-count">4</span>
->>>>>>> d7823bad859d1d8be0d8bd6c19fcf592a63a1cd6
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
 
           <div class="site-state-item site-state-categories">
             <a href="/categories">
-<<<<<<< HEAD
-              <span class="site-state-item-count">1</span>
-=======
               <span class="site-state-item-count">3</span>
->>>>>>> d7823bad859d1d8be0d8bd6c19fcf592a63a1cd6
               <span class="site-state-item-name">分类</span>
               </a>
           </div>
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-<<<<<<< HEAD
-              <span class="site-state-item-count">0</span>
-=======
               <span class="site-state-item-count">4</span>
->>>>>>> d7823bad859d1d8be0d8bd6c19fcf592a63a1cd6
               <span class="site-state-item-name">标签</span>
               </a>
           </div>
@@ -443,7 +460,7 @@
           <div class="post-toc">
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#装64位虚拟机的条件"><span class="nav-number">1.</span> <span class="nav-text">装64位虚拟机的条件</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#VirtualBox中实现Ubuntu自适应窗口大小"><span class="nav-number"></span> <span class="nav-text">VirtualBox中实现Ubuntu自适应窗口大小</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#VirtualBox实现Win7_和_Ubuntu共享文件夹"><span class="nav-number"></span> <span class="nav-text">VirtualBox实现Win7 和 Ubuntu共享文件夹</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#C++11"><span class="nav-number"></span> <span class="nav-text">C++11</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Mysql"><span class="nav-number"></span> <span class="nav-text">安装Mysql</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#编译要执行Mysql操作的C文件"><span class="nav-number"></span> <span class="nav-text">编译要执行Mysql操作的C文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#apache安装、配置及cgi设置"><span class="nav-number"></span> <span class="nav-text">apache安装、配置及cgi设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ubuntu误操作无法以root身份进入系统时如何恢复"><span class="nav-number"></span> <span class="nav-text">ubuntu误操作无法以root身份进入系统时如何恢复</span></a></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
@@ -478,8 +495,6 @@
   </a>
 </div>
 
-<<<<<<< HEAD
-=======
 <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
 </script>
 
@@ -487,7 +502,6 @@
      | 本站总访问量<span id="busuanzi_value_site_pv"></span>次
 </span>
 
->>>>>>> d7823bad859d1d8be0d8bd6c19fcf592a63a1cd6
 
  </div>
     </footer>
