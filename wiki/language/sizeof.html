@@ -28,36 +28,151 @@
 
   <div class="toc"><span class="toctitle">Table of Contents</span><ul>
 <li><a href="#sizeof">sizeof</a><ul>
-<li><a href="#_1">用法</a><ul>
-<li><a href="#1">1.括在括号内的类型</a></li>
-<li><a href="#2unary-expression">2.一元表达式（unary-expression）</a></li>
+<li><a href="#_1">使用对象</a><ul>
+<li><a href="#1">1.括在括号内的类型</a><ul>
+<li><a href="#_2">基本类型</a></li>
+<li><a href="#_3">复合类型</a></li>
 </ul>
 </li>
-<li><a href="#_2">参考</a></li>
+<li><a href="#2unary-expression">2.一元表达式（unary-expression）/变量</a></li>
+</ul>
+</li>
+<li><a href="#_4">参考</a></li>
 </ul>
 </li>
 </ul>
 </div>
 <h1 id="sizeof">sizeof</h1>
 <div class="hlcode"><pre><span class="k">sizeof</span><span class="err">是一个单目操作符，并不是函数。</span>
-<span class="k">sizeof</span><span class="err">操作符以字节形式给出了其操作数的存储大小。</span>
+<span class="k">sizeof</span><span class="err">计算操作数（包括数组、变量、类型、结构体等）所占内存空间，用字节数表示。</span>
 <span class="err">操作数可以是一个表达式或括在括号内的类型名。</span>
 <span class="err">操作数的存储大小由操作数的类型决定。　</span>   
 <span class="err">操作的结果是</span><span class="kt">size_t</span><span class="err">类型，具体的返回值与操作系统和编译器有关。</span>
 </pre></div>
 
 
-<h2 id="_1">用法</h2>
+<h2 id="_1">使用对象</h2>
 <h3 id="1">1.括在括号内的类型</h3>
 <div class="hlcode"><pre><span class="err">必须有括号</span>
 <span class="k">sizeof</span><span class="p">(</span><span class="n">TYPE</span><span class="p">)</span>
 </pre></div>
 
 
-<h3 id="2unary-expression">2.一元表达式（unary-expression）</h3>
+<h4 id="_2">基本类型</h4>
+<div class="hlcode"><pre><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="err">、</span><span class="n">ANSI</span><span class="err">　</span><span class="n">C</span><span class="err">正式规定字符类型为</span><span class="mi">1</span><span class="err">字节。</span>
+<span class="k">sizeof</span><span class="p">(</span><span class="kt">char</span><span class="p">)</span>          <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="k">sizeof</span><span class="p">(</span><span class="kt">unsigned</span> <span class="kt">char</span><span class="p">)</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="k">sizeof</span><span class="p">(</span><span class="kt">signed</span> <span class="kt">char</span><span class="p">)</span>   <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="err">　　</span>
+<span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="err">、其他类型在</span><span class="n">ANSI</span><span class="err">　</span><span class="n">C</span><span class="err">中没有具体规定，大小依赖于实现。</span>
+<span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span>            <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
+<span class="k">sizeof</span><span class="p">(</span><span class="kt">unsigned</span> <span class="kt">int</span><span class="p">)</span>   <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
+<span class="k">sizeof</span><span class="p">(</span><span class="kt">short</span> <span class="kt">int</span><span class="p">)</span>      <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+<span class="k">sizeof</span><span class="p">(</span><span class="kt">unsigned</span> <span class="kt">short</span><span class="p">)</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+<span class="k">sizeof</span><span class="p">(</span><span class="kt">long</span> <span class="kt">int</span><span class="p">)</span>       <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
+<span class="k">sizeof</span><span class="p">(</span><span class="kt">unsigned</span> <span class="kt">long</span><span class="p">)</span>  <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
+<span class="k">sizeof</span><span class="p">(</span><span class="kt">float</span><span class="p">)</span>          <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
+<span class="k">sizeof</span><span class="p">(</span><span class="kt">double</span><span class="p">)</span>         <span class="o">=</span> <span class="mi">8</span><span class="p">;</span>
+<span class="k">sizeof</span><span class="p">(</span><span class="kt">long</span> <span class="kt">double</span><span class="p">)</span>    <span class="o">=</span> <span class="mi">12</span><span class="p">;</span>
+
+<span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="err">、当操作数是指针时，</span><span class="k">sizeof</span><span class="err">依赖于编译器。</span>
+<span class="n">Microsoft</span><span class="err">　</span><span class="n">C</span><span class="o">/</span><span class="n">C</span><span class="o">++</span><span class="mf">7.0</span><span class="err">中，</span><span class="n">near</span><span class="err">类指针字节数为</span><span class="mi">2</span><span class="err">，</span><span class="n">far</span><span class="err">、</span><span class="n">huge</span><span class="err">类指针字节数为</span><span class="mi">4</span><span class="err">。</span>
+<span class="err">一般</span><span class="n">Unix</span><span class="o">/</span><span class="n">Linux</span><span class="err">的指针字节数为</span><span class="mi">4</span><span class="err">。</span><span class="p">[</span><span class="err">现在很多机器都是</span><span class="mi">64</span><span class="err">位，相应的一般指针的字节数也变为</span><span class="mf">8.</span><span class="p">]</span>
+<span class="err">例如</span><span class="o">:</span> <span class="kt">char</span> <span class="o">*</span><span class="n">p</span><span class="p">;</span>      <span class="c1">//Linux中</span>
+<span class="k">sizeof</span><span class="p">(</span><span class="n">p</span><span class="p">)</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
+<span class="k">sizeof</span><span class="p">(</span><span class="kt">char</span><span class="o">*</span><span class="p">)</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
+</pre></div>
+
+
+<h4 id="_3">复合类型</h4>
+<div class="hlcode"><pre><span class="err">当操作数是联合类型时，</span><span class="k">sizeof</span><span class="err">是其最大字节成员的字节数。</span>
+<span class="err">当操作数是结构类型时，</span><span class="k">sizeof</span><span class="err">是其成员类型的总字节数，包括补充字节在内。</span>
+<span class="err">总体上遵循两个原则：</span>
+<span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="err">整体空间是</span> <span class="err">占用空间最大的成员（的类型）所占字节数的整倍数</span>
+<span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="err">数据对齐原则</span><span class="o">----</span><span class="err">内存按结构成员的先后顺序排列，当排到该成员变量时，其前面已摆放的空间大小必须是该成员类型大小的整倍数，如果不够则补齐，以此向后类推。</span>
+<span class="err">注意：数组按照单个变量一个一个的摆放，而不是看成整体。如果成员中有自定义的类、结构体，也要注意数组问题。</span>
+</pre></div>
+
+
+<div class="hlcode"><pre><span class="k">struct</span> <span class="n">s1</span>
+<span class="p">{</span>
+    <span class="kt">char</span> <span class="n">a</span><span class="p">;</span>
+    <span class="kt">double</span> <span class="n">b</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">c</span><span class="p">;</span>
+    <span class="kt">char</span> <span class="n">d</span><span class="p">;</span> 
+<span class="p">};</span>
+<span class="cm">/*</span>
+<span class="cm">01234567</span>
+<span class="cm">a-------</span>
+<span class="cm">bbbbbbbb</span>
+<span class="cm">ccccd---</span>
+<span class="cm">*/</span>
+
+<span class="k">struct</span> <span class="n">s2</span>
+<span class="p">{</span>
+    <span class="kt">char</span> <span class="n">a</span><span class="p">;</span>
+    <span class="kt">char</span> <span class="n">b</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">c</span><span class="p">;</span>
+    <span class="kt">double</span> <span class="n">d</span><span class="p">;</span>
+<span class="p">};</span>
+<span class="cm">/*</span>
+<span class="cm">01234567</span>
+<span class="cm">ab--cccc</span>
+<span class="cm">dddddddd</span>
+<span class="cm">*/</span>
+
+<span class="n">cout</span><span class="o">&lt;&lt;</span><span class="k">sizeof</span><span class="p">(</span><span class="n">s1</span><span class="p">)</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span> <span class="c1">// 24</span>
+<span class="n">cout</span><span class="o">&lt;&lt;</span><span class="k">sizeof</span><span class="p">(</span><span class="n">s2</span><span class="p">)</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span> <span class="c1">// 16</span>
+</pre></div>
+
+
+<div class="hlcode"><pre><span class="c1">//对于结构体中的结构体成员，不要认为它的对齐方式就是他的大小</span>
+<span class="k">struct</span> <span class="n">s1</span>
+<span class="p">{</span>
+    <span class="n">char</span> <span class="n">a</span><span class="p">[</span><span class="mh">8</span><span class="p">];</span>
+<span class="p">};</span>
+
+<span class="k">struct</span> <span class="n">s2</span>
+<span class="p">{</span>
+    <span class="n">double</span> <span class="n">d</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="k">struct</span> <span class="n">s3</span>
+<span class="p">{</span>
+    <span class="n">s1</span> <span class="n">s</span><span class="p">;</span>
+    <span class="n">char</span> <span class="n">a</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="k">struct</span> <span class="n">s4</span>
+<span class="p">{</span>
+    <span class="n">s2</span> <span class="n">s</span><span class="p">;</span>
+    <span class="n">char</span> <span class="n">a</span><span class="p">;</span> 
+<span class="p">};</span>
+<span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">sizeof</span><span class="p">(</span><span class="n">s1</span><span class="p">)</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span> <span class="c1">// 8</span>
+<span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">sizeof</span><span class="p">(</span><span class="n">s2</span><span class="p">)</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span> <span class="c1">// 8</span>
+<span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">sizeof</span><span class="p">(</span><span class="n">s3</span><span class="p">)</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span> <span class="c1">// 9</span>
+<span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">sizeof</span><span class="p">(</span><span class="n">s4</span><span class="p">)</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span> <span class="c1">// 16;</span>
+<span class="c1">//  s1和s2大小虽然都是8，但是s1的对齐方式是1，s2是8（double），所以在s3和s4中才有这样的差异。</span>
+</pre></div>
+
+
+<h3 id="2unary-expression">2.一元表达式（unary-expression）/变量</h3>
 <div class="hlcode"><pre><span class="err">括号可加可不加，表达式不会被计算</span>
 <span class="err">对一个指向数组的指针操作时，得到的是整个数组所占据的存储大小</span>
 <span class="err">若想计算指向数组的指针本身占据的存储大小，可以将该指针作为参数传递到函数中，并在函数中对其操作</span>
+
+<span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="err">、当操作数具有数组类型时，其结果是数组的总字节数。</span>
+
+<span class="err">例如</span><span class="o">:</span> <span class="kt">char</span> <span class="n">a</span><span class="p">[</span><span class="mi">5</span><span class="p">];</span>
+      <span class="kt">int</span>  <span class="n">b</span><span class="p">[</span><span class="mi">5</span><span class="p">];</span>
+      <span class="k">sizeof</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+      <span class="k">sizeof</span><span class="p">(</span><span class="n">b</span><span class="p">)</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;</span>
+
+<span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="err">、当操作数是具体的字符串或者数值时，会根据具体的类型进行相应转化。</span>
+
+<span class="err">例如</span><span class="o">:</span> <span class="k">sizeof</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span>    <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>  <span class="c1">//自动转化为int类型</span>
+      <span class="k">sizeof</span><span class="p">(</span><span class="mf">8.8</span><span class="p">)</span>  <span class="o">=</span> <span class="mi">8</span><span class="p">;</span>  <span class="c1">//自动转化为double类型，注意，不是float类型</span>
+      <span class="k">sizeof</span><span class="p">(</span><span class="s">&quot;ab&quot;</span><span class="p">)</span> <span class="o">=</span> <span class="mi">3</span>   <span class="c1">//自动转化为数组类型，</span>
 </pre></div>
 
 
@@ -80,24 +195,50 @@
          <span class="o">&lt;&lt;</span> <span class="n">sizeof</span> <span class="n">szHello</span>
          <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">The size of the pointer is &quot;</span>
          <span class="o">&lt;&lt;</span> <span class="n">getPtrSize</span><span class="p">(</span> <span class="n">szHello</span> <span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+
+    <span class="k">string</span> <span class="n">strHello</span> <span class="o">=</span> <span class="k">string</span><span class="p">(</span><span class="s">&quot;Hello, world!&quot;</span><span class="p">);</span>
+
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;The size of string is: &quot;</span> 
+         <span class="o">&lt;&lt;</span> <span class="n">sizeof</span><span class="p">(</span> <span class="k">string</span> <span class="p">)</span>
+         <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">The siof of [c_str]&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">strHello</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; is: &quot;</span>
+         <span class="o">&lt;&lt;</span> <span class="n">sizeof</span><span class="p">(</span><span class="n">strHello</span><span class="p">.</span><span class="n">c_str</span><span class="p">())</span>
+         <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">The siof of [data]&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">strHello</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; is: &quot;</span>
+         <span class="o">&lt;&lt;</span> <span class="n">sizeof</span><span class="p">(</span><span class="n">strHello</span><span class="p">.</span><span class="n">data</span><span class="p">())</span>
+         <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">The size of the [string]&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">strHello</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; is: &quot;</span>
+         <span class="o">&lt;&lt;</span> <span class="n">sizeof</span><span class="p">(</span><span class="n">strHello</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+
+    <span class="n">char</span> <span class="o">*</span><span class="n">pc</span><span class="p">;</span>
+    <span class="k">int</span> <span class="o">*</span><span class="n">pi</span><span class="p">;</span>
+    <span class="n">double</span> <span class="o">*</span><span class="n">pd</span><span class="p">;</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">sizeof</span><span class="p">(</span><span class="n">char</span><span class="o">*</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;, &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">sizeof</span><span class="p">(</span><span class="n">pc</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">sizeof</span><span class="p">(</span><span class="k">int</span><span class="o">*</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;, &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">sizeof</span><span class="p">(</span><span class="n">pi</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">sizeof</span><span class="p">(</span><span class="n">double</span><span class="o">*</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;, &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">sizeof</span><span class="p">(</span><span class="n">pd</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+    <span class="k">return</span> <span class="mh">0</span><span class="p">;</span>
 <span class="p">}</span>
+
 <span class="cm">/***    Output</span>
 <span class="cm">The size of a char is: 1</span>
 <span class="cm">The length of Hello, world! is: 14</span>
-<span class="cm">The size of the pointer is 4</span>
+<span class="cm">The size of the pointer is 8</span>
+
+<span class="cm">The size of string is: 32</span>
+<span class="cm">The siof of [c_str]Hello, world! is: 8</span>
+<span class="cm">The siof of [data]Hello, world! is: 8</span>
+<span class="cm">The size of the [string]Hello, world! is: 32</span>
 <span class="cm">***/</span>
 </pre></div>
 
 
-<h2 id="_2">参考</h2>
-<p><a href="https://msdn.microsoft.com/en-us/library/4s7x1k91.aspx">microsoft library</a>
-<a href="http://blog.sina.com.cn/s/blog_5da08c340100bmwu.html">c语言详解sizeof</a></p>
+<h2 id="_4">参考</h2>
+<p><a href="https://msdn.microsoft.com/en-us/library/4s7x1k91.aspx">microsoft library</a>    <br />
+<a href="http://blog.sina.com.cn/s/blog_5da08c340100bmwu.html">c语言详解sizeof</a>  <br />
+<a href="http://www.cnblogs.com/chengxin1982/archive/2009/01/13/1374575.html">sizeof()用法汇总</a></p>
     </div>
     <div id="footer">
       <span>
         <p>Copyright © 2016 yzbyzz.
         Powered by <a href="http://simiki.org/" target="_blank">Simiki</a>.</p>
-        <p>Site Generated 2016-09-01 17:03:41</p>
+        <p>Site Generated 2016-09-08 16:43:22</p>
       </span>
     </div>
   </body>
