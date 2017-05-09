@@ -165,7 +165,7 @@
 </pre></div>
 
 
-<div class="hlcode"><pre><span class="err">表示结构体内位域的定义，</span><span class="n">width</span><span class="err">表示</span><span class="n">member_name</span><span class="err">所占的位，</span><span class="n">width</span><span class="o">&lt;=</span><span class="k">sizeof</span><span class="p">(</span><span class="n">type</span><span class="p">)</span>
+<div class="hlcode"><pre><span class="err">表示结构体内位域的定义，</span><span class="n">width</span><span class="err">表示</span><span class="n">member_name</span><span class="err">所占的位</span><span class="p">(</span><span class="n">bit</span><span class="p">)</span><span class="err">数，</span><span class="n">width</span><span class="o">&lt;=</span><span class="k">sizeof</span><span class="p">(</span><span class="n">type</span><span class="p">)</span>
 <span class="err">使用位域的主要目的是压缩存储，其大致规则为：</span>
 <span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="err">如果相邻位域字段的类型相同，且其位宽之和小于类型的</span><span class="k">sizeof</span><span class="err">大小，则后面的字段将紧邻前一个字段存储，直到不能容纳为止；</span>
 <span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="err">如果相邻位域字段的类型相同，但其位宽之和大于类型的</span><span class="k">sizeof</span><span class="err">大小，则后面的字段将从新的存储单元开始，其偏移量为其类型大小的整数倍；</span>
@@ -296,14 +296,14 @@
 <h2 id="_5">参考</h2>
 <p><a href="https://msdn.microsoft.com/en-us/library/4s7x1k91.aspx">microsoft library</a>    <br />
 <a href="http://blog.sina.com.cn/s/blog_5da08c340100bmwu.html">c语言详解sizeof</a>  <br />
-<a href="http://www.cnblogs.com/chengxin1982/archive/2009/01/13/1374575.html">sizeof()用法汇总</a>
+<a href="http://www.cnblogs.com/chengxin1982/archive/2009/01/13/1374575.html">sizeof()用法汇总</a>  <br />
 <a href="http://blog.sina.com.cn/s/blog_75b0e2ad01011z9j.html">解决结构体中冒号的含义</a></p>
     </div>
     <div id="footer">
       <span>
         <p>Copyright © 2017 yzbyzz.
         Powered by <a href="http://simiki.org/" target="_blank">Simiki</a>.</p>
-        <p>Site Generated 2017-05-09 18:19:23</p>
+        <p>Site Generated 2017-05-09 18:51:14</p>
       </span>
     </div>
   </body>
