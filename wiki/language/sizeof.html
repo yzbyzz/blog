@@ -37,7 +37,8 @@
 <li><a href="#2unary-expression">2.一元表达式（unary-expression）/变量</a></li>
 </ul>
 </li>
-<li><a href="#_4">参考</a></li>
+<li><a href="#_4">不能使用的对象</a></li>
+<li><a href="#_5">参考</a></li>
 </ul>
 </li>
 </ul>
@@ -99,7 +100,7 @@
     <span class="kt">char</span> <span class="n">a</span><span class="p">;</span>
     <span class="kt">double</span> <span class="n">b</span><span class="p">;</span>
     <span class="kt">int</span> <span class="n">c</span><span class="p">;</span>
-    <span class="kt">char</span> <span class="n">d</span><span class="p">;</span> 
+    <span class="kt">char</span> <span class="n">d</span><span class="p">;</span>
 <span class="p">};</span>
 <span class="cm">/*</span>
 <span class="cm">01234567</span>
@@ -126,33 +127,85 @@
 </pre></div>
 
 
-<div class="hlcode"><pre><span class="c1">//对于结构体中的结构体成员，不要认为它的对齐方式就是他的大小</span>
-<span class="k">struct</span> <span class="n">s1</span>
+<p>对于结构体中的结构体成员，不要认为它的对齐方式就是他的大小。</p>
+<div class="hlcode"><pre><span class="k">struct</span> <span class="n">s1</span>
 <span class="p">{</span>
-    <span class="n">char</span> <span class="n">a</span><span class="p">[</span><span class="mh">8</span><span class="p">];</span>
+    <span class="kt">char</span> <span class="n">a</span><span class="p">[</span><span class="mi">8</span><span class="p">];</span>
 <span class="p">};</span>
 
 <span class="k">struct</span> <span class="n">s2</span>
 <span class="p">{</span>
-    <span class="n">double</span> <span class="n">d</span><span class="p">;</span>
+    <span class="kt">double</span> <span class="n">d</span><span class="p">;</span>
 <span class="p">};</span>
 
 <span class="k">struct</span> <span class="n">s3</span>
 <span class="p">{</span>
     <span class="n">s1</span> <span class="n">s</span><span class="p">;</span>
-    <span class="n">char</span> <span class="n">a</span><span class="p">;</span>
+    <span class="kt">char</span> <span class="n">a</span><span class="p">;</span>
 <span class="p">};</span>
 
 <span class="k">struct</span> <span class="n">s4</span>
 <span class="p">{</span>
     <span class="n">s2</span> <span class="n">s</span><span class="p">;</span>
-    <span class="n">char</span> <span class="n">a</span><span class="p">;</span> 
+    <span class="kt">char</span> <span class="n">a</span><span class="p">;</span>
 <span class="p">};</span>
-<span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">sizeof</span><span class="p">(</span><span class="n">s1</span><span class="p">)</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span> <span class="c1">// 8</span>
-<span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">sizeof</span><span class="p">(</span><span class="n">s2</span><span class="p">)</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span> <span class="c1">// 8</span>
-<span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">sizeof</span><span class="p">(</span><span class="n">s3</span><span class="p">)</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span> <span class="c1">// 9</span>
-<span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">sizeof</span><span class="p">(</span><span class="n">s4</span><span class="p">)</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span> <span class="c1">// 16;</span>
+<span class="n">cout</span><span class="o">&lt;&lt;</span><span class="k">sizeof</span><span class="p">(</span><span class="n">s1</span><span class="p">)</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span> <span class="c1">// 8</span>
+<span class="n">cout</span><span class="o">&lt;&lt;</span><span class="k">sizeof</span><span class="p">(</span><span class="n">s2</span><span class="p">)</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span> <span class="c1">// 8</span>
+<span class="n">cout</span><span class="o">&lt;&lt;</span><span class="k">sizeof</span><span class="p">(</span><span class="n">s3</span><span class="p">)</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span> <span class="c1">// 9</span>
+<span class="n">cout</span><span class="o">&lt;&lt;</span><span class="k">sizeof</span><span class="p">(</span><span class="n">s4</span><span class="p">)</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span> <span class="c1">// 16;</span>
 <span class="c1">//  s1和s2大小虽然都是8，但是s1的对齐方式是1，s2是8（double），所以在s3和s4中才有这样的差异。</span>
+</pre></div>
+
+
+<p><strong> 结构体中有冒号的情况  </strong></p>
+<div class="hlcode"><pre><span class="k">struct</span>
+<span class="p">{</span>
+    <span class="n">type</span> <span class="p">[</span><span class="n">member_name</span><span class="p">]</span> <span class="o">:</span> <span class="n">width</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<div class="hlcode"><pre><span class="err">表示结构体内位域的定义，</span><span class="n">width</span><span class="err">表示</span><span class="n">member_name</span><span class="err">所占的位，</span><span class="n">width</span><span class="o">&lt;=</span><span class="k">sizeof</span><span class="p">(</span><span class="n">type</span><span class="p">)</span>
+<span class="err">使用位域的主要目的是压缩存储，其大致规则为：</span>
+<span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="err">如果相邻位域字段的类型相同，且其位宽之和小于类型的</span><span class="k">sizeof</span><span class="err">大小，则后面的字段将紧邻前一个字段存储，直到不能容纳为止；</span>
+<span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="err">如果相邻位域字段的类型相同，但其位宽之和大于类型的</span><span class="k">sizeof</span><span class="err">大小，则后面的字段将从新的存储单元开始，其偏移量为其类型大小的整数倍；</span>
+<span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="err">如果相邻的位域字段的类型不同，则各编译器的具体实现有差异，</span><span class="n">VC6</span><span class="err">采取不压缩方式，</span><span class="n">Dev</span><span class="o">-</span><span class="n">C</span><span class="o">++</span><span class="err">采取压缩方式；</span>
+<span class="p">(</span><span class="mi">4</span><span class="p">)</span><span class="err">如果位域字段之间穿插着非位域字段，则不进行压缩；</span>
+<span class="p">(</span><span class="mi">5</span><span class="p">)</span><span class="err">整个结构体的总大小为最宽基本类型成员大小的整数倍。</span>
+</pre></div>
+
+
+<div class="hlcode"><pre><span class="k">struct</span> <span class="n">TBitShort</span>
+<span class="p">{</span>
+    <span class="kt">short</span> <span class="n">a</span> <span class="o">:</span> <span class="mi">4</span><span class="p">;</span>
+    <span class="kt">short</span> <span class="n">b</span> <span class="o">:</span> <span class="mi">5</span><span class="p">;</span>
+    <span class="kt">short</span> <span class="n">c</span> <span class="o">:</span> <span class="mi">7</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="k">struct</span> <span class="n">TBitChar</span>
+<span class="p">{</span>
+    <span class="kt">char</span> <span class="n">a</span> <span class="o">:</span> <span class="mi">4</span><span class="p">;</span>
+    <span class="kt">char</span> <span class="n">b</span> <span class="o">:</span> <span class="mi">5</span><span class="p">;</span>
+    <span class="kt">char</span> <span class="n">c</span> <span class="o">:</span> <span class="mi">7</span><span class="p">;</span>
+<span class="p">};</span>
+
+
+<span class="k">struct</span> <span class="n">TBitCharAno</span>
+<span class="p">{</span>
+    <span class="kt">char</span> <span class="n">a</span> <span class="o">:</span> <span class="mi">4</span><span class="p">;</span>
+    <span class="kt">char</span> <span class="n">b</span> <span class="o">:</span> <span class="mi">4</span><span class="p">;</span>
+    <span class="kt">char</span> <span class="n">c</span> <span class="o">:</span> <span class="mi">8</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>                 
+<span class="p">{</span>                          
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">TBitShort</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span> <span class="c1">//2</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">TBitChar</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>  <span class="c1">//3</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">TBitCharAno</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>  <span class="c1">//2</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="k">sizeof</span><span class="p">(</span><span class="kt">short</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span> <span class="c1">//2</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="k">sizeof</span><span class="p">(</span><span class="kt">char</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>    <span class="c1">//1</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>              
+<span class="p">}</span>
 </pre></div>
 
 
@@ -198,7 +251,7 @@
 
     <span class="k">string</span> <span class="n">strHello</span> <span class="o">=</span> <span class="k">string</span><span class="p">(</span><span class="s">&quot;Hello, world!&quot;</span><span class="p">);</span>
 
-    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;The size of string is: &quot;</span> 
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;The size of string is: &quot;</span>
          <span class="o">&lt;&lt;</span> <span class="n">sizeof</span><span class="p">(</span> <span class="k">string</span> <span class="p">)</span>
          <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">The siof of [c_str]&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">strHello</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; is: &quot;</span>
          <span class="o">&lt;&lt;</span> <span class="n">sizeof</span><span class="p">(</span><span class="n">strHello</span><span class="p">.</span><span class="n">c_str</span><span class="p">())</span>
@@ -229,16 +282,28 @@
 </pre></div>
 
 
-<h2 id="_4">参考</h2>
+<h2 id="_4">不能使用的对象</h2>
+<ul>
+<li>函数。 （但是，sizeof 可应用于指向函数的指针。）</li>
+<li>位域。</li>
+<li>未定义的类。</li>
+<li>void 类型。</li>
+<li>动态分配的数组。</li>
+<li>外部数组。</li>
+<li>不完整类型。</li>
+<li>带括号的不完整类型的名称。</li>
+</ul>
+<h2 id="_5">参考</h2>
 <p><a href="https://msdn.microsoft.com/en-us/library/4s7x1k91.aspx">microsoft library</a>    <br />
 <a href="http://blog.sina.com.cn/s/blog_5da08c340100bmwu.html">c语言详解sizeof</a>  <br />
-<a href="http://www.cnblogs.com/chengxin1982/archive/2009/01/13/1374575.html">sizeof()用法汇总</a></p>
+<a href="http://www.cnblogs.com/chengxin1982/archive/2009/01/13/1374575.html">sizeof()用法汇总</a>
+<a href="http://blog.sina.com.cn/s/blog_75b0e2ad01011z9j.html">解决结构体中冒号的含义</a></p>
     </div>
     <div id="footer">
       <span>
-        <p>Copyright © 2016 yzbyzz.
+        <p>Copyright © 2017 yzbyzz.
         Powered by <a href="http://simiki.org/" target="_blank">Simiki</a>.</p>
-        <p>Site Generated 2016-09-08 16:43:22</p>
+        <p>Site Generated 2017-05-09 18:19:23</p>
       </span>
     </div>
   </body>
