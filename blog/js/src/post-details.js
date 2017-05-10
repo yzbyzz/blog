@@ -28,10 +28,23 @@ $(document).ready(function () {
     }
   }
 
+<<<<<<< HEAD
   function initAffix () {
     var headerHeight = $('.header-inner').height();
     var footerOffset = parseInt($('.main').css('padding-bottom'), 10);
     var sidebarTop = headerHeight + 10;
+=======
+  // Sidebar float
+  function initAffix () {
+    var headerHeight = $('.header-inner').height();
+    var footerOffset = parseInt($('.main').css('padding-bottom'), 10);
+
+    /*jshint camelcase: false */
+    var sidebarTop = (CONFIG.sidebar.offset_float === 0) ?
+      headerHeight + CONFIG.sidebar.offset :
+      headerHeight;
+    /*jshint camelcase: true */
+>>>>>>> 8c40c3aee3d90785f7d41dac1adb72d258ce7017
 
     $('.sidebar-inner').affix({
       offset: {
@@ -128,6 +141,7 @@ $(document).ready(function () {
   });
 
   // Expand sidebar on post detail page by default, when post has a toc.
+<<<<<<< HEAD
   NexT.motion.middleWares.sidebar = function () {
     var $tocContent = $('.post-toc-content');
 
@@ -137,4 +151,16 @@ $(document).ready(function () {
       }
     }
   };
+=======
+  var $tocContent = $('.post-toc-content');
+  var isSidebarCouldDisplay = CONFIG.sidebar.display === 'post' ||
+      CONFIG.sidebar.display === 'always';
+  var hasTOC = $tocContent.length > 0 && $tocContent.html().trim().length > 0;
+  if (isSidebarCouldDisplay && hasTOC) {
+    CONFIG.motion ?
+      (NexT.motion.middleWares.sidebar = function () {
+          NexT.utils.displaySidebar();
+      }) : NexT.utils.displaySidebar();
+  }
+>>>>>>> 8c40c3aee3d90785f7d41dac1adb72d258ce7017
 });

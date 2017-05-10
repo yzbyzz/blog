@@ -8,6 +8,11 @@ $(document).ready(function () {
 
   NexT.utils.lazyLoadPostsImages();
 
+<<<<<<< HEAD
+=======
+  NexT.utils.registerESCKeyEvent();
+
+>>>>>>> 8c40c3aee3d90785f7d41dac1adb72d258ce7017
   NexT.utils.registerBackToTop();
 
   $('.site-nav-toggle button').on('click', function () {
