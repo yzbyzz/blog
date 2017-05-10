@@ -1,31 +1,29 @@
-<!DOCTYPE>    
-<html>    
+<!doctype html>
+<style type="text/css">
+body {
+/* 加载背景图 */
+background-image: url(index02.jpg);
 
-	<head>    
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">    
-		<title>yzbyzz</title>    
+/* 背景图垂直、水平均居中 */
+background-position: center center;
 
-	</head>    
+/* 背景图不平铺 */
+background-repeat: no-repeat;
+
+/* 当内容高度大于图片高度时，背景图像的位置相对于viewport固定 */
+background-attachment: fixed;
+
+/* 让背景图基于容器大小伸缩 */
+background-size: cover;
+
+/* 设置背景颜色，背景图加载过程中会显示背景色 */
+background-color: #ffffff;
+}
+</style>
+<html>
+<body>
+	<title>yzbyz's site</title>
+	<h1 align="center"><br><br><br><br><a href="./blog/index.html" style="font-size:24px;"=>blog</a> | <a href="./wiki/index.html" style="font-size:24px;"=>wiki</a> | <a href="./blog/about/index.html" style="font-size:24px;"=>about</a> </h1>
 	
-	<body>    
-
-		<div class="desc" style="position:absolute; width:50%; height:80%; z-index:0">
-			<h2>
-                yzbyzz
-			</h2>
-			<hr class="divider short">
-			<h2>
-			    <a href="./blog/index.html" style="font-size:24px;"=>blog</a>
-			</h2>
-			<h2>
-			    <a href="./wiki/index.html" style="font-size:24px;"=>wiki</a>
-			</h2>
-		</div>
-
-		<div id="image" style="position:absolute; width:98%; height:98%; z-index:-1">    
-		<img src="http://7xlrdd.com1.z0.glb.clouddn.com/index.png" height="100%" width="100%"/>    
-		</div>    
-
-	</body>    
-
-</html>  
+</body>
+</html>
