@@ -1,0 +1,91 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <link rel="Stylesheet" type="text/css" href="/wiki/static/css/style.css">
+    <link rel="Stylesheet" type="text/css" href="/wiki/static/css/tango.css">
+    <link rel="shortcut icon" href="/wiki/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/wiki/favicon.ico" type="image/x-icon">
+    <link rel="alternate" type="application/atom+xml" href="atom.xml" title="Atom feed">
+    <title>字节序 - z.Wiki</title>
+    <meta name="keywords" content=""/>
+    <meta name="description" content=""/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  </head>
+
+  <body>
+    <div id="container">
+      
+<div id="header">
+  <div class="post-nav"><a href="/wiki/">Home</a>&nbsp;&#187;&nbsp;<a href="/wiki/#basic">basic</a>&nbsp;&#187;&nbsp;字节序
+    <span class="updated">Updated&nbsp;
+      2017-05-20 18:00
+      
+    </span></div>
+</div>
+<div class="clearfix"></div>
+
+<div class="page_title">字节序</div>
+
+  <h2 id="_1">大端</h2>
+<div class="hlcode"><pre><span class="err">数据的高字节保存在内存的低地址中，而数据的低字节保存在内存的高地址中，这样的存储模式有点儿类似于把数据当作字符串顺序处理：地址由小向大增加，而数据从高位往低位放；</span>
+</pre></div>
+
+
+<h2 id="_2">小端</h2>
+<div class="hlcode"><pre><span class="err">数据的高字节保存在内存的高地址中，而数据的低字节保存在内存的低地址中，这种存储模式将地址的高低和数据位权有效地结合起来，高地址部分权值高，低地址部分权值低，和我们的逻辑方法一致。</span>
+</pre></div>
+
+
+<p>概念上并不难理解，只是有时容易混淆。
+个人的记忆方法是：将数据当做一个字符串顺序处理，从左往右看，如果每个字符（数据）对应的地址变大则为大端；反之则为小端。</p>
+<p>以0x1234（即十进制4660）为例，用D(char)表示char在内存中的地址</p>
+<ul>
+<li>如果是大端，则有：D(0x12) &lt; D(0x34);</li>
+<li>如果是小端，则有：D(0x12) &gt; D(0x34)</li>
+</ul>
+<h2 id="_3">为什么有大端小端：</h2>
+<p>电脑的内存单元是一个字节，而int、short等类型的大小不止一个字节。
+于是int的4个字节在内存地址中是按照数据高字节对应高地址、低字节对应低地址（即高高低低）或高低低高分为了小端和大端。</p>
+<h2 id="_4">测试本机为大端小端的方法：</h2>
+<h3 id="cc">C/C++</h3>
+<p>在union中所有成员共享同一块内存空间，编译程序保证分配给联合的内存能够容纳其最大的成员变量。</p>
+<p>对其中一个成员赋值时，所有其他成员的值也会被覆盖。当然char类型只会覆盖int类型的部分值。</p>
+<p>实例如下：</p>
+<div class="hlcode"><pre><span class="cp">#include &lt;stdio.h&gt;</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="o">**</span><span class="n">argv</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">union</span><span class="p">{</span>
+        <span class="kt">int</span> <span class="n">a</span><span class="p">;</span>
+        <span class="kt">short</span> <span class="n">b</span><span class="p">;</span>
+    <span class="p">}</span><span class="n">u</span><span class="p">;</span>
+    <span class="n">u</span><span class="p">.</span><span class="n">a</span> <span class="o">=</span> <span class="mh">0x12345678</span><span class="p">;</span>
+    <span class="cm">/*</span>
+<span class="cm">    *----内存地址从左往右递增-----</span>
+<span class="cm">    *大端：</span>
+<span class="cm">    *int   0x12,0x34,0x56,0x78</span>
+<span class="cm">    *short 0x12,0x34</span>
+<span class="cm">    *</span>
+<span class="cm">    *小端：</span>
+<span class="cm">    *int   0x78,0x56,0x34,0x12</span>
+<span class="cm">    *short 0x78,0x56</span>
+<span class="cm">    */</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%x</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">u</span><span class="p">.</span><span class="n">b</span><span class="p">);</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">u</span><span class="p">.</span><span class="n">b</span> <span class="o">==</span> <span class="mh">0x1234</span><span class="p">)</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;大端</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+    <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">u</span><span class="p">.</span><span class="n">b</span> <span class="o">==</span> <span class="mh">0x5678</span><span class="p">)</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;小端</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+    <span class="k">else</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Error</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+    </div>
+    <div id="footer">
+      <span>
+        <p>Copyright © 2017 yzbyzz.
+        Powered by <a href="http://simiki.org/" target="_blank">Simiki</a>.</p>
+        <p>Site Generated 2017-05-20 17:29:02</p>
+      </span>
+    </div>
+  </body>
+</html>
