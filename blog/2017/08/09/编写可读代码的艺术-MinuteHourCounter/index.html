@@ -77,7 +77,7 @@
 <link href="/blog/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="优雅,C++," />
+  <meta name="keywords" content="C++,优雅," />
 
 
 
@@ -94,15 +94,15 @@
 
 
 <meta name="description" content="一个 MinuteHourCounter （分钟/小时计数器），用于统计过去一段时间内某事发生的频次。下面是《编写可读代码的艺术》中的几种实现方式。">
-<meta name="keywords" content="优雅,C++">
+<meta name="keywords" content="C++,优雅">
 <meta property="og:type" content="article">
-<meta property="og:title" content="《编写可读代码的艺术》 MinuteHourCounter">
+<meta property="og:title" content="《编写可读代码的艺术》之实现 MinuteHourCounter">
 <meta property="og:url" content="http://yzbyzz.com/2017/08/09/编写可读代码的艺术-MinuteHourCounter/index.html">
 <meta property="og:site_name" content="z.Note">
 <meta property="og:description" content="一个 MinuteHourCounter （分钟/小时计数器），用于统计过去一段时间内某事发生的频次。下面是《编写可读代码的艺术》中的几种实现方式。">
 <meta property="og:updated_time" content="2017-08-09T08:58:03.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="《编写可读代码的艺术》 MinuteHourCounter">
+<meta name="twitter:title" content="《编写可读代码的艺术》之实现 MinuteHourCounter">
 <meta name="twitter:description" content="一个 MinuteHourCounter （分钟/小时计数器），用于统计过去一段时间内某事发生的频次。下面是《编写可读代码的艺术》中的几种实现方式。">
 
 
@@ -137,7 +137,7 @@
 
 
 
-  <title>《编写可读代码的艺术》 MinuteHourCounter | z.Note</title>
+  <title>《编写可读代码的艺术》之实现 MinuteHourCounter | z.Note</title>
   
 
 
@@ -327,7 +327,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">《编写可读代码的艺术》 MinuteHourCounter</h1>
+          <h1 class="post-title" itemprop="name headline">《编写可读代码的艺术》之实现 MinuteHourCounter</h1>
         
 
         <div class="post-meta">
@@ -399,7 +399,7 @@
 
           
           
-             <span id="/blog/2017/08/09/编写可读代码的艺术-MinuteHourCounter/" class="leancloud_visitors" data-flag-title="《编写可读代码的艺术》 MinuteHourCounter">
+             <span id="/blog/2017/08/09/编写可读代码的艺术-MinuteHourCounter/" class="leancloud_visitors" data-flag-title="《编写可读代码的艺术》之实现 MinuteHourCounter">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -463,9 +463,11 @@
 <li>使用队列时，每次新增事件，该事件的时间点都只能是当前时间点；使用数组后，可以新增过去时间发生的事件。</li>
 </ul>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">ConveyorQueue</span> &#123;</span></div><div class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; v;</div><div class="line">    <span class="keyword">int</span> total_sum;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">int</span> <span class="title">GetValue</span><span class="params">(<span class="keyword">int</span> index)</span> </span>&#123;</div><div class="line">        <span class="keyword">if</span> (index &gt;= <span class="number">0</span> &amp;&amp; index &lt; v.size()) &#123;</div><div class="line">            <span class="keyword">return</span> v[index];</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">    &#125;</div><div class="line"><span class="keyword">public</span>:</div><div class="line">    ConveyorQueue(<span class="keyword">int</span> max_items) :  total_sum(<span class="number">0</span>) &#123;</div><div class="line">        v.resize(max_items, <span class="number">0</span>);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">void</span> <span class="title">AddToBack</span><span class="params">(<span class="keyword">int</span>  count)</span> </span>&#123;</div><div class="line">        v[<span class="number">0</span>] += count;</div><div class="line">        total_sum += count;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">//据当前时间'pos单位时间'前的事件</span></div><div class="line">    <span class="function"><span class="keyword">void</span> <span class="title">Add</span><span class="params">(<span class="keyword">int</span> pos, <span class="keyword">int</span> count)</span> </span>&#123;</div><div class="line">        <span class="keyword">if</span>(pos &gt;= <span class="number">0</span> &amp;&amp; pos &lt; v.size()) &#123;</div><div class="line">            v[pos] += count;</div><div class="line">            total_sum += count;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">void</span> <span class="title">Shift</span><span class="params">(<span class="keyword">int</span> num_shifted)</span> </span>&#123;</div><div class="line">        total_sum = <span class="number">0</span>;</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = v.size() - <span class="number">1</span>; i &gt;= <span class="number">0</span>; --i) &#123;</div><div class="line">            v[i] = GetValue(i - num_shifted);</div><div class="line">            total_sum += v[i];</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">int</span> <span class="title">TotalSum</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> total_sum;</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
-<h3 id="关于精准的的探讨"><a href="#关于精准的的探讨" class="headerlink" title="关于精准的的探讨"></a>关于精准的的探讨</h3><blockquote>
-<p>To be done</p>
-</blockquote>
+<h3 id="关于精准的的探讨"><a href="#关于精准的的探讨" class="headerlink" title="关于精准的的探讨"></a>关于精准的的探讨</h3><p>以MinuteCounter为例。在这里，我们时间都是以秒作为单位，假设一件事发生在 t=0.99 时，我们会记成 t=0 。当我们在 t=60.1 调用程序时，会将当前时间当做 t=60 。</p>
+<ul>
+<li>前两个方案会将 t=1,2,3…59,60 的频次累加并作为过去一分钟发生的次数，也就是会将 t=0.99 时的事件忽略，虽然理论上这是一分钟内发生的事。平均来讲，我们得到的会是过去 59.5 秒的时间内事件发生的次数。所幸在大多数情况这样的精度已经足够了。</li>
+<li>第三个方案中按照给出的代码来实现，存在同样的误差。那是因为我们用 60 个桶来表示一分钟，一个桶表示一秒钟的间隔。如果我们用 120 个桶来表示一分钟，一个桶表示半秒钟，那我们便可以将误差减小一半。与此同时，我们所使用的内存也会增加一倍。这里就是误差与内存性能之间的衡量。</li>
+</ul>
 
       
     </div>
@@ -495,9 +497,9 @@
       
         <div class="post-tags">
           
-            <a href="/blog/tags/优雅/" rel="tag"># 优雅</a>
-          
             <a href="/blog/tags/C/" rel="tag"># C++</a>
+          
+            <a href="/blog/tags/优雅/" rel="tag"># 优雅</a>
           
         </div>
       
@@ -519,6 +521,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/blog/2017/08/26/apple-complier-error/" rel="prev" title="Mac Xcode iOS 一些编译错误的原因及其解决方法">
+                Mac Xcode iOS 一些编译错误的原因及其解决方法 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -621,7 +627,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/blog/archives/">
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -643,7 +649,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/blog/tags/index.html">
-                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-count">9</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -843,7 +849,7 @@
         var disqus_config = function () {
           this.page.url = 'http://yzbyzz.com/2017/08/09/编写可读代码的艺术-MinuteHourCounter/';
           this.page.identifier = '2017/08/09/编写可读代码的艺术-MinuteHourCounter/';
-          this.page.title = '《编写可读代码的艺术》 MinuteHourCounter';
+          this.page.title = '《编写可读代码的艺术》之实现 MinuteHourCounter';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://z-note.disqus.com/embed.js';
