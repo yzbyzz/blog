@@ -96,18 +96,18 @@
 
 
 
-  <meta name="description" content="Linux 下 C/C++ 代码编译链接生成可执行程序的过程，主要包括如下几个步骤。 预处理12#只进行预处理并把预处理结果输出g++ -E source.cpp -o source.i 预处理过程主要处理源代码文件中以 # 开始的预编译指令，包括如下规则。  将所有的 #define 删除，并且展开所有的宏定义。 处理所有的条件预编译指令，包括 #if、 #ifdef、 #ifndef、 #el">
+  <meta name="description" content="Linux 下 C/C++ 代码编译链接生成可执行程序的过程，主要包括如下几个步骤。">
 <meta name="keywords" content="C++,Linux,编译,旧文补发">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linux 编译与链接">
 <meta property="og:url" content="https://yzbyzz.github.io/2017/08/27/Linux-编译与链接/index.html">
 <meta property="og:site_name" content="这又有个博客">
-<meta property="og:description" content="Linux 下 C/C++ 代码编译链接生成可执行程序的过程，主要包括如下几个步骤。 预处理12#只进行预处理并把预处理结果输出g++ -E source.cpp -o source.i 预处理过程主要处理源代码文件中以 # 开始的预编译指令，包括如下规则。  将所有的 #define 删除，并且展开所有的宏定义。 处理所有的条件预编译指令，包括 #if、 #ifdef、 #ifndef、 #el">
+<meta property="og:description" content="Linux 下 C/C++ 代码编译链接生成可执行程序的过程，主要包括如下几个步骤。">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2017-09-03T02:56:49.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux 编译与链接">
-<meta name="twitter:description" content="Linux 下 C/C++ 代码编译链接生成可执行程序的过程，主要包括如下几个步骤。 预处理12#只进行预处理并把预处理结果输出g++ -E source.cpp -o source.i 预处理过程主要处理源代码文件中以 # 开始的预编译指令，包括如下规则。  将所有的 #define 删除，并且展开所有的宏定义。 处理所有的条件预编译指令，包括 #if、 #ifdef、 #ifndef、 #el">
+<meta name="twitter:description" content="Linux 下 C/C++ 代码编译链接生成可执行程序的过程，主要包括如下几个步骤。">
 
 
 
@@ -511,6 +511,7 @@
 
       
         <p>Linux 下 C/C++ 代码编译链接生成可执行程序的过程，主要包括如下几个步骤。</p>
+<a id="more"></a>
 <h1 id="预处理"><a href="#预处理" class="headerlink" title="预处理"></a>预处理</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span>只进行预处理并把预处理结果输出</span><br><span class="line">g++ -E source.cpp -o source.i</span><br></pre></td></tr></table></figure>
 <p>预处理过程主要处理源代码文件中以 <code>#</code> 开始的预编译指令，包括如下规则。</p>
 <ul>
@@ -521,7 +522,7 @@
 <li>添加行号和文件名标识，以便于编译时编译器产生调试用的行号信息及用于编译时产生编译错误或警告时能够显示行号。</li>
 <li>保留所有的 <code>#pragma</code> 编译器指令，因为编译器需要使用它们。</li>
 </ul>
-<a id="more"></a>
+<!--more-->
 <h1 id="编译"><a href="#编译" class="headerlink" title="编译"></a>编译</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span>输出编译后的汇编代码文件</span><br><span class="line">g++ -S source.i -o source.s</span><br></pre></td></tr></table></figure>
 <p>编译过程就是把预处理完的文件进行如下的一系列操作后产生相应的汇编代码文件。这个过程往往是整个程序构建的核心部分，也是最复杂的部分之一。</p>
 <ul>

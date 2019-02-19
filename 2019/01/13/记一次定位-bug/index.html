@@ -104,7 +104,7 @@
 <meta property="og:site_name" content="这又有个博客">
 <meta property="og:description" content="前言最近公司在开发一个对战游戏：服务端使用 Java + Netty + Spring，编辑器使用 IDEA；客户端使用  C# + Unity，编辑器使用 Unity Editor 和 Rider；通信方式使用 Socket，消息编解码使用 Protobuf。由于你懂的原因，加入了机器人。机器人的昵称、头像等信息是通过配置文件读取的。机器人的配置格式类似 {&amp;quot;nickname&amp;quot">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-01-13T12:37:25.470Z">
+<meta property="og:updated_time" content="2019-02-19T15:02:12.793Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="记一次定位 bug">
 <meta name="twitter:description" content="前言最近公司在开发一个对战游戏：服务端使用 Java + Netty + Spring，编辑器使用 IDEA；客户端使用  C# + Unity，编辑器使用 Unity Editor 和 Rider；通信方式使用 Socket，消息编解码使用 Protobuf。由于你懂的原因，加入了机器人。机器人的昵称、头像等信息是通过配置文件读取的。机器人的配置格式类似 {&amp;quot;nickname&amp;quot">
@@ -425,12 +425,24 @@
                 
               
 
-              <time title="创建时间：2019-01-13 17:22:19 / 修改时间：20:37:25" itemprop="dateCreated datePublished" datetime="2019-01-13T17:22:19+08:00">2019-01-13</time>
+              <time title="创建时间：2019-01-13 17:22:19" itemprop="dateCreated datePublished" datetime="2019-01-13T17:22:19+08:00">2019-01-13</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-02-19 23:02:12" itemprop="dateModified" datetime="2019-02-19T23:02:12+08:00">2019-02-19</time>
               
             
           </span>
@@ -499,6 +511,7 @@
 
       
         <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>最近公司在开发一个对战游戏：服务端使用 Java + Netty + Spring，编辑器使用 IDEA；客户端使用  C# + Unity，编辑器使用 Unity Editor 和 Rider；通信方式使用 Socket，消息编解码使用 Protobuf。由于你懂的原因，加入了机器人。机器人的昵称、头像等信息是通过配置文件读取的。机器人的配置格式类似 <code>{&quot;nickname&quot;: &quot;xxx&quot;, &quot;avatar&quot;: &quot;yyy&quot;}</code>。</p>
+<a id="more"></a>
 <p>阶段性开发后，打包进行测试。</p>
 <h2 id="出现问题"><a href="#出现问题" class="headerlink" title="出现问题"></a>出现问题</h2><p>某天收到一个 bug 反馈，反馈的信息是一张游戏界面的截图：图上有玩家/机器人的头像和昵称，其中一个机器人（后面都简称为 R）的昵称是乱码。（简而言之，能看出来机器人 R 的头像，但是看不出来 R 的昵称是哪些字符。）很明显这是一道编 song 码 fen 题。</p>
 <h2 id="定位问题"><a href="#定位问题" class="headerlink" title="定位问题"></a>定位问题</h2><p>由于手头只有代码和配置文件，没有机器人头像的图片资源。所以先用 Python 写了个脚本把机器人配置文件里的头像都抓了下来。通过对比，定位到 R 头像的图片 url，再从 url 找到 R 的具体配置，并定位到乱码的字符。嗯，的确是个特殊字符。</p>
