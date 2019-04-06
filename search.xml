@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[关于域名]]></title>
+    <url>%2F2019%2F04%2F05%2F%E5%85%B3%E4%BA%8E%E5%9F%9F%E5%90%8D%2F</url>
+    <content type="text"></content>
+      <categories>
+        <category>其他</category>
+      </categories>
+      <tags>
+        <tag>域名</tag>
+        <tag>个人品牌</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[crontab 运行后不发送邮件]]></title>
     <url>%2F2019%2F03%2F10%2Fcrontab-%E6%89%A7%E8%A1%8C%E5%90%8E%E4%B8%8D%E5%8F%91%E9%80%81%E9%82%AE%E4%BB%B6%2F</url>
     <content type="text"><![CDATA[crontab 执行命令后，如有输出到 stdout、stderr，相应的输出会通过邮件发送给用户。 如果命令有输出，但是却没有发送邮件，很可能是 crontab 或者 mail 的设置有问题。 问题crontab 执行命令后，没有发送邮件。查看 crontab 日志 /var/log/cron ，看到 12Mar 9 00:20:01 centos CROND[18856]: (test) CMD (sh /home/test/test.sh)Mar 9 00:20:01 centos CROND[18854]: (test) MAIL (mailed 48 bytes of output but got status 0x004b#012) 说明 crontab 发送邮件的时候出错了。再查看 mail 的日志 /var/log/maillog，看到 1Mar 9 00:20:01 centos postfix/sendmail[18860]: fatal: parameter inet_interfaces: no local interface found for ::1 解决经过网上搜索，发现是 Postfix 的配置问题。 默认的配置如下 1234567891011121314151617# The inet_interfaces parameter specifies the network interface# addresses that this mail system receives mail on. By default,# the software claims all active interfaces on the machine. The# parameter also controls delivery of mail to user@[ip.address].## See also the proxy_interfaces parameter, for network addresses that# are forwarded to us via a proxy or network address translator.## Note: you need to stop/start Postfix when this parameter changes.##inet_interfaces = all#inet_interfaces = $myhostname#inet_interfaces = $myhostname, localhostinet_interfaces = localhost# Enable IPv4, and IPv6 if supportedinet_protocols = all 修改方案一 12inet_interfaces = allinet_protocols = all 修改方案二 12inet_interfaces = localhostinet_protocols = ipv4 反思这个问题看起来不复杂，按部就班就能找到原因。 但实际解决过程中—— 发现 crontab 没有发送邮件 查看 crontab 日志 搜索 MAIL (mailed 48 bytes of output but got status 0x004b#012)，但是出来的很多结果都不符合我的问题。 想到可以看 mail 的日志 搜索 fatal: parameter inet_interfaces: no local interface found for ::1才发现是 Postfix 的配置问题。 这里其实暴露出了自己 Linux 知识体系的残缺不堪。由于缺乏完整的知识体系，只能依赖搜索引擎和别人的文章、经验。但是有些时候，不同的底层原因，会造成相同的表现，导致自己搜索了很久，还是不能找到真正的原因。 很多其他知识也是如此，如果没有对全局的理解，就只能不断重复这个 遇到小问题，经过或多或少的搜索、探究后找到答案。在这个过程中，除了解决当时的问题，更重要的是不断完善自己的知识体系——多思考、多记录，避免总是遇到同样的问题。这也是写文章最大的意义了吧。 RefCentOS 错误：sendmail: fatal: parameter inet_interfaces: no local interface found for ::1错误修复 sendmail: fatal: parameter inet_interfaces: no local interface found for ::1linux 配置定时任务 crontab 碰到的坑 sendmail]]></content>
