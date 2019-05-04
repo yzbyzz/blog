@@ -1,6 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Minecraft 从入门到入坑]]></title>
+    <url>%2F2019%2F05%2F04%2Fminecraft-guide%2F</url>
+    <content type="text"><![CDATA[Minecraft 是一个高度开放的沙盒游戏。这里简单介绍一下 Minecraft。 简单展示首先放几个视频展示 Minecraft 能做什么。 建筑向： 【Minecraft】EpicWork建筑团队出品——武陵尘梦• 【OFL工作室】诸神的黎明Minecraft出生点建筑 红石科技向： 大神在我的世界里建造一台能够运行的电脑,在我的世界里就没有什么不可能！ 生存向： 【敖厂长】在MINECRAFT中成家立业 【Minecraft】来看一看一个生存六万五千分钟的存档里 Pi,mc,极限生存part1~2 游戏版本 Java 版 支持 Windows、macOS、Linux 系统的电脑。只要运行 JRE 即可。 基岩版 支持 Windows、iOS、Android 等。 主机版 其中 iOS、Android 端，分成了国际的基岩版，和国内的网易版。 Java 版的玩家人数最多，且有丰富第三方 mod、材质包等。我主要玩的是 Java 版，只玩过一点的 iOS 基岩版。后文都以 Java 版为例。 启动游戏 正版玩家。在官网购买后即可使用正版启动器开始游戏。 盗版玩家。下载 HMCL 后使用 HMCL 开始游戏。 需要先安装 JRE/JDK，下载 HMCL 后，要先下载游戏本体资源(有多个版本可以下载)，还可以安装需要的 mod 来增强体验。 功能加强个人建议资源到国外的 CurseForge 下载，尽量避免在第三方下载。国内很多站点是搬运、翻译 CurseForge 的资源。 材质包Minecraft 本身的画风是像素风格，很粗糙。但是可以通过材质包和光影(显卡杀手)来改善画面。具体操作是：从资源站下载材质包后丢到相应的文件夹，即可在游戏中选择切换。 ModMinecraft 本身有很强的开放性，还可以通过第三方 mod 来提高游戏丰富性，以及改善操作体验等。具体操作与使用材质包类似：从资源站下载并丢到相应的文件夹。需要注意的是，使用 mod 之前需要先安装 Forge 或者 LiteLoader 才能使用第三方 mod。然后就是 mod 需要注意与 Minecraft 游戏本体版本匹配，以及有些 mod 依赖其他 mod，最后就是有些 mod 之间可能有冲突。 个人推荐必备的 mod 有：JourneyMap 地图插件、Just Enough Items 物品合成查询、Inventory Tweaks 背包整理。然后就是程序员必备的 ComputerCraft 和 OpenComputers ——可以使用 Lua 语言编写代码控制”机器人”来执行操作，释放双手。 如果你有自己的需求，你甚至可以使用 Java 来编写自己的 mod！ 多人游戏局域网有一个人选择对局域网开发，其他人通过多人游戏，输入局域网 IP 即可加入。 外网第三方内网映射使用蛤蟆吃、花生壳等映射内网后，使用局域网的方式联机。 使用服务器 需要一台有外网 IP 的服务器(可在阿里云、腾讯云等购买)。 在服务器上运行 Minecraft 服务端 jar 包即可。(可使用 scrren 命令以便后台运行服务端，并在需要时进行控制。) 本地运行相同版本的客户端，通过多人游戏，输入 IP 和端口号即可。 自己做内网映射如果不想或者不方便使用蛤蟆吃等第三方软件，自己有服务器，但是服务器配置不高或者不想使用太多的服务器资源，可以在服务器上搭建内网映射服务，只做转发功能。此时对服务器的硬件要求不高，只要网络流畅即可。 PS. 内网映射可以使用 frp 来搭建。 服务器版本选择各个版本的比较：[生存] [服务端整合包发布] [1.x-1.12.2][多种]服务端核心合集&amp;搭建好的服务端★你想要的 都在这【内置教程】 主要对比如下： 各服务端都有些什么区别？minecraft_server（即官服）为官方的服务端，每有一个新版MC出来，官服都会跟着出不能加插件，不能加MOD，仅能使用原版的指令可自定义功能少 官服+Forge（即MOD官服）在官服的基础上加入了Forge，稳定性较好仍无法加插件，可以通过MOD添加非原版的指令可自定义功能少 Cauldron（即MCPC+，KCauldron，MOD服）MCPC+为先前的名字，KCauldron为最后几个1.7.10版的名字优点：既能加MOD又能加bukkit插件缺点：①bukkit插件并非完全兼容，仍有一些无法正常运行②由于MOD和插件并在一起，经常会出现不可避免的BUG，例如核弹炸领地③较吃配置，稳定性良可自定义功能较多 ThermosCauldron的优化版优点：既能加MOD又能加bukkit插件相较于Cauldron更安全，稳定性更好对插件的兼容性比Cauldron更好缺点：①bukkit插件并非完全兼容，偶有一些无法正常运行②由于MOD和插件并在一起，经常会出现不可避免的BUG，例如核弹炸领地可自定义功能较多 Craftbukkit（即水桶服）Spigot的前身，可以加入bukkit插件优点：稳定性较Cauldron相比较好，能够兼容绝大部分的bukkit插件缺点：部分方面优化较差，一些专为spigot制作的插件无法运行可自定义功能较多 Spigot（即水龙头）Craftbukkit的优化版，可加入bukkit插件优点：稳定性较Craftbukkit相比更好，在Craftbukkit一些卡服的问题上做出了优化服务端自带反作弊缺点：暂未发现可自定义功能多 PaperSpigot【目前使用数最多】Spigot的优化版，可加入bukkit插件优点：稳定性和Spigot一样，但是Spigot上一些仍可造成卡服的问题在这基本没有了内存占用量更少，并且多出了一些涉及到服务器性能的设置1.9之前内置反作弊缺点：极少数插件不支持可自定义功能非常多 TacoSpigotSpigot的优化版，可加入bukkit插件优点：在卡服优化方面比Paper更强内存占用更少缺点：部分插件不支持可自定义功能非常多 TorchSpigot【国人制作】TacoSpigot的优化版，可加入bukkit插件优点：在各方面性能相较于Taco更加好，稳定性十分强，可自定义方面比Taco更多支持多核心运算，并内置反作弊缺点：少量插件无法使用可能会出现一些奇怪的BUG以及报错可自定义功能非常多 SpongeForge（即海绵端）有人称为Cauldron的后续版本，可加入Sponge插件优点：支持Sponge插件，同时可以加入MODMOD与插件之间的兼容性相较于Cauldron加强了不少Sponge插件可在客户端中安装优化极为强，只要不报错几乎没Bukkit的各种卡服缺陷未来可实现高版本的MOD服从API7开始，对多线程处理器有了较大的优化，负载均衡缺点：①即使加了pore也难以让bukkit插件正常运行②Sponge插件比bukkit要少很多③插件配置比bukkit插件难，汉化更难④启动慢可自定义功能较多 SpongeVanillaSponge端的纯净版优点：支持Sponge插件Sponge插件可在客户端中安装优化极强，占用内存少，配置需求低从API7开始，对多线程处理器有了较大的优化，负载均衡缺点：①即使加了pore也难以让大部分bukkit插件正常运行②Sponge插件比bukkit要少很多③插件配置比bukkit插件难，汉化更难④无法加入MOD可自定义功能较多 Glowstone（荧石端）优点：开源的bukkit服务端，开发者可通过这个制作属于自己的服务端内置对sponge插件所支持的插件缺点：未知 下载可以通过 MC Mirror。 一些资源相关介绍 Minecraft 官网 Minecraft 中国区(网易)官网 维基百科 - Minecraft) 论坛 Minecraft forum(官方论坛，英文) MCBBS(中文)) Minecraft 百度贴吧 Wiki Minecraft Wiki(英文) Minecraft Wiki （中文） 游戏资源 HMCL - Minecraft 启动器 Forge - 加载 mod OptiFine - 高清修复 CurseForge - mod 、资源包下载 MC Mirror MC Mod MinecraftXZ]]></content>
+      <categories>
+        <category>其他</category>
+      </categories>
+      <tags>
+        <tag>Minecraft</tag>
+        <tag>游戏</tag>
+        <tag>mod</tag>
+        <tag>服务器</tag>
+        <tag>编程</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Java Lambda 表达式不为人熟知的特性]]></title>
     <url>%2F2019%2F04%2F27%2Fjava-lambda%2F</url>
     <content type="text"><![CDATA[Lambda 表达式是 Java 8 的新语法，可以极大地简化代码，增强语言的表达力。这里不赘述 Lambda 表达式的语法，主要从一道题目出发来说 Lambda 表达式的一个特性。 从前阵子开始，坚持每天在 LeetCode 做一道题。这是前话。今天在做这道题的时候，碰到一个问题，记录下来备忘。 从题目说起题目本身很好理解：给几个区间，将其中重叠相交的合并，返回合并后的区间。 做法也不难：将区间按照”起点小的在前，起点一样的则终点小的在前”排序。 选定第一个区间 A，按序依次遍历剩下的区间 B，如果 B 的起点比 A 的终点小，则 A 和 B 可以合并。 不断重复这个选定第一个区间的操作，直至将所有可合并的区间进行合并。 最后返回剩下的区间即可。 按理说不难，做完之后，也能通过了。代码如下： 1234567891011121314151617181920212223242526272829303132333435363738394041public int[][] merge(int[][] intervals) &#123; Arrays.sort(intervals, (o1, o2) -&gt; &#123; if (o1[0] != o2[0]) &#123; return Integer.compare(o1[0], o2[0]); &#125; return Integer.compare(o1[1], o2[1]); &#125;); boolean[] vis = new boolean[intervals.length]; Arrays.fill(vis, true); for (int i = 0; i &lt; intervals.length; i++) &#123; if (!vis[i]) &#123; continue; &#125; for (int j = i + 1; j &lt; intervals.length; j++) &#123; if (intervals[j][0] &lt;= intervals[i][1]) &#123; vis[j] = false; if (intervals[i][1] &lt; intervals[j][1]) &#123; intervals[i][1] = intervals[j][1]; &#125; &#125; &#125; &#125; int count = 0; for (boolean v : vis) &#123; if (v) &#123; count++; &#125; &#125; int[][] ans = new int[count][]; for (int i = 0, j = 0; i &lt; intervals.length; i++) &#123; if (!vis[i]) &#123; continue; &#125; ans[j++] = intervals[i]; &#125; return ans;&#125; 不太理解的是 LeetCode 上的执行时间是 84 ms，已经战胜 28.32 % 的 java 提交记录。我左思右想，这已经是 O(N) 复杂度的解法(当然还有常数级别的优化空间)，难道还能有更高效的做法？ 效率差距的疑惑于是我看了一下别人的解法，大体上是一样的，复杂的也是 O(N)。因为一些细节上的处理，会有常数级别的差距，但应该不至于有这么大的差距才对。 一开始怀疑是数据量很大，在遍历的过程需要访问当前数据和之前的数据，可能是在这时发生了取数据的耗时操作。于是尝试把需要比较的数据用临时变量存储下来。结果发现耗时并没有什么变化。 最后实在想不出来，于是照着别人的代码，一点点改，边改边看执行时间。 最后发现是排序这里的 lambda 表达式造成了效率的差距。 Java 的 LambdaGoogle 搜索后看到了 Stack Overflow 上的这个提问 Java lambdas 20 times slower than anonymous classes。 可以看到 Lambda 表达式的一些特性： Lambda 表达式对应的类是在运行时动态生成的。运行时动态生成，并不是这里慢的原因。动态生成一个结构简单的类，比从外部资源加载同样的字节流要更快。 程序必须要加载用于生成 Lambda 类的框架，才能使用 Lambda 表达式。加载框架才是这里慢的原因。(Oracle JDK 使用 ASM 来实现。) 如果不考虑加载 Lambda 框架的时间，使用 Lambda 表达式的效率会比使用类高一点。 所以，程序使用 Lambda 表达式后慢的原因也就呼之而出了：LeetCode 执行提交的代码之前，没有使用到 Lambda 表达式。当执行我们的代码时，要先加载处理 Lambda 表达式的框架。加载框架的时间会算到程序的运行时间里。 进一步的验证虽然原理已经知道，但也要用代码从实际来验证一遍。 就像该回答中提到的，定义更多的 Lambda 表达式，也不会对运行时间有明显的影响。 我自己也做了一个实验：在程序的一次运行期间，多次执行”合并区间”的操作。每次都使用相同的数据，可以明显看到第一次执行的时间明显比后面每一次的时间都要长。这也验证了的确存在”加载 Lambda 框架”这个步骤的存在，以及这个加载过程也是主要的耗时操作。]]></content>
@@ -118,9 +133,9 @@
         <category>技术</category>
       </categories>
       <tags>
+        <tag>旧文补发</tag>
         <tag>字符集</tag>
         <tag>编码</tag>
-        <tag>旧文补发</tag>
       </tags>
   </entry>
   <entry>
@@ -167,10 +182,10 @@
         <category>技术</category>
       </categories>
       <tags>
-        <tag>旧文补发</tag>
         <tag>C++</tag>
         <tag>Linux</tag>
         <tag>编译</tag>
+        <tag>旧文补发</tag>
       </tags>
   </entry>
   <entry>
